@@ -3,8 +3,8 @@
  * @param {number[]} B
  * @return {number}
  */
-A: [1, 2, 3, 2, 1, 9];
-B: [3, 2, 1, 4, 7];
+// A: [1, 2, 3, 2, 1, 9];
+// B: [3, 2, 1, 4, 7];
 export default (A, B) => {
   const lenA = A.length;
   const lenB = B.length;
