@@ -15,28 +15,17 @@ export default (nums, k) => {
       let _tmp = Math.abs(nums[j] - nums[i]);
       if (results.length === k) {
         results.sort((a, b) => a - b);
-        for (let i = 0; i < k; i++) {
-          if (_tmp < results[0]) {
-            for (let j = k - 1; j >= 1; j--) {
-              swap(results[j], results[j - 1]);
-            }
-            results[0] = _tmp;
-          } else if (_tmp >= results[i] && _tmp < results[i + 1]) {
-            if (i < k - 2) {
-              for (let j = k - 1; j >= i + 1; j--) {
-                swap(results[j], results[j - 1]);
-              }
-            }
-
-            results[i + 1] = _tmp;
+        for (let i = k - 1; i >= 0; i--) {
+          if (results[i] > _tmp) {
+            results[i] = _tmp;
+            break;
           }
-          console.log(results);
         }
       } else {
         results.push(_tmp);
       }
     }
   }
-
+  results.sort((a, b) => a - b);
   return results[k - 1];
 };
