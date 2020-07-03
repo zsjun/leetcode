@@ -13,6 +13,16 @@ import findTrap from "../../src/719/index1";
 test(`arr:5`, () => {
   expect(findTrap([1, 3, 1], 1)).toEqual(0);
 });
+
+3;
+test(`arr:5`, () => {
+  expect(findTrap([1, 6, 1], 3)).toEqual(5);
+});
+
+2;
+test(`arr:5`, () => {
+  expect(findTrap([62, 100, 4], 2)).toEqual(58);
+});
 // test(`arr:5`, () => {
 //   expect(
 //     findTrap(
