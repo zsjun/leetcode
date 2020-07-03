@@ -10,6 +10,9 @@ import findTrap from "../../src/719/index";
 test(`arr:4`, () => {
   expect(findTrap([9, 10, 7, 10, 6, 1, 5, 4, 9, 8], 18)).toEqual(2);
 });
+test(`arr:5`, () => {
+  expect(findTrap([1, 3, 1], 1)).toEqual(0);
+});
 // test(`arr:5`, () => {
 //   expect(
 //     findTrap(
