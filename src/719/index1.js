@@ -24,18 +24,14 @@ export default (nums, k) => {
     // 计算出一共有多少少于mid的键值对
     let count = 0;
     for (let i = 0, j = 0; j < nums.length - 1; j++) {
-      while (nums[j] - nums[i] <= mid) i++;
+      while (nums[j] - nums[i] < mid) i++;
       count += j - i;
     }
-    if (count < k) {
-      low = mid + 1;
+    if (count <= k) {
+      low = mid;
     }
     if (count > k) {
       maxDistance = mid - 1;
-    }
-    if (count === k) {
-      low = mid;
-      break;
     }
   }
 
