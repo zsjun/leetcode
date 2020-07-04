@@ -16,3 +16,7 @@ test(`arr:2`, () => {
 test(`arr:3`, () => {
   expect(getTargetPosition([1], 1)).toEqual([0, 0]);
 });
+
+test(`arr:3`, () => {
+  expect(getTargetPosition([1], 1)).toEqual([0, 0]);
+});

@@ -40,6 +40,8 @@ Your algorithm should run in O(n) time and uses constant extra space.
 
 这种妙在数组元素的下标天然可以和最小正整数对应起来。
 
+写一个完全正确的算法确实很难
+
 
 
 
