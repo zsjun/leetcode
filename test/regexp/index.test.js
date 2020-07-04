@@ -1,4 +1,4 @@
-import regModeStr from "../../code/regexp/index";
+import regModeStr from "../../src/regexp/index";
 
 test("regModeStr", () => {
   expect(regModeStr("aaa", "caa*")).toBe(false);

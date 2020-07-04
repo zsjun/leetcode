@@ -1,4 +1,4 @@
-import getMaxPrices from "../../code/greed/index";
+import getMaxPrices from "../../src/greed/index";
 
 test(`DDSDS: the sky is blue1`, () => {
   expect(getMaxPrices([7, 1, 5, 3, 6, 4])).toBe(7);

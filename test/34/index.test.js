@@ -1,4 +1,4 @@
-import getTargetPosition from "../../code/34/index";
+import getTargetPosition from "../../src/34/index";
 
 // test(`arr:1`, () => {
 //   expect(getMaxRect([])).toBe(0);

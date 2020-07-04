@@ -1,4 +1,4 @@
-import findMin from "../../code/154/index";
+import findMin from "../../src/154/index";
 
 // test(`arr:1`, () => {
 //   expect(getMaxRect([])).toBe(0);
