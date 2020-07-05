@@ -16,19 +16,18 @@ export default (rains) => {
         if (dryDays.length === 0) {
           return [];
         } else {
-          let j = 0;
           ans[index++] = -1;
-          for (; j < dryDays.length; j++) {
-            if (dryDays[j] > rainDayMap[rains[i]]) {
-              ans[dryDay[j]] = rains[i];
+          let j = 0;
+          let len = dryDays.length;
+          for (j = 0; j < dryDays.length; j++) {
+            if (dryDays[j] > rainDayMap.get(rains[i])) {
+              ans[dryDays[j]] = rains[i];
               dryDays.splice(j, 1);
               rainDayMap.set(rains[i], i);
-              console.log(dryDays);
               break;
             }
           }
-
-          if (j === dryDays.length) return [];
+          if (dryDays.length + 1 !== len) return [];
         }
       } else {
         // 添加到map中
@@ -40,6 +39,6 @@ export default (rains) => {
       ans[index++] = 1;
     }
   }
-  console.log(ans);
+  console.log("11223", ans);
   return ans;
 };
