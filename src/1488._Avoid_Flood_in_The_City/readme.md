@@ -71,5 +71,9 @@ For example - If you have rains = [1, 2, 0, ??]. Without knowing what the '??' i
 
 思路是一样的，所以关键就是如何确定如何在某天不下雨的时候，如何根据后面要下的雨来决定在不下雨的这天，决定dry 那个湖水。
 
-看到了map和set，其实也就是一个查找和替换的过程。
+看到了map和set，其实也就是一个查找和替换的过程,但是发现在leetcode上超时了，js确实慢
+
+后来换了一个思路，可以利用一个数组dryDays，把rains中的不下雨的天数，比如加入第三天没下雨，则设置dryDays[2] = 0, 当在后面出现下雨的时候，然后通过indexOf在drysDasy 查找第一次出现0的情况来替换。
+
+
 
