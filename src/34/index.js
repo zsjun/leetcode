@@ -29,7 +29,6 @@ export default (nums, target) => {
       }
       let max = mid;
       for (let j = end; j > mid; j--) {
-        console.log("11", nums[j]);
         if (nums[j] === target) {
           max = j;
           break;
