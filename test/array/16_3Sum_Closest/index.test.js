@@ -1,4 +1,4 @@
-import threeSumClosest from "../../../src/array/16_3Sum_Closest/index";
+import threeSumClosest from "../../../../src/array/16_3Sum_Closest/index";
 
 test("1", () => {
   expect(threeSumClosest([-1, 2, 1, -4], 1)).toBe(2);

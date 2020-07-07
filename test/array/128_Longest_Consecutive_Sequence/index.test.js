@@ -1,4 +1,4 @@
-import longestConsecutive from "../../../src/array/128_Longest_Consecutive_Sequence/index";
+import longestConsecutive from "../../../../src/array/128_Longest_Consecutive_Sequence/index";
 
 test("1", () => {
   expect(longestConsecutive([100, 4, 200, 1, 3, 2])).toBe(4);

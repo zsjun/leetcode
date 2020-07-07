@@ -5,9 +5,5 @@ const nameArr = process.argv.slice(2);
 
 const fileName = nameArr.join("_").replace(".", "");
 
-mkdirp(`./test/${fileName}`).then(() =>
-  console.log(`made test dir ${fileName}`)
-);
-mkdirp(`./src/${fileName}`).then(() =>
-  console.log(`made src dir  ${fileName}`)
-);
+mkdirp(`./test/array/${fileName}`).then(() => console.log(`made test dir ${fileName}`));
+mkdirp(`./src/array/${fileName}`).then(() => console.log(`made src dir  ${fileName}`));

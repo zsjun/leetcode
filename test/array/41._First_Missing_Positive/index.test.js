@@ -1,4 +1,4 @@
-import getTargetPosition from "../../../src/array/41._First_Missing_Positive/index";
+import getTargetPosition from "../../../../src/array/41._First_Missing_Positive/index";
 
 // test(`arr:2`, () => {
 //   expect(getTargetPosition([1, 2, 0])).toEqual(3);

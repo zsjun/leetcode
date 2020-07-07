@@ -1,4 +1,4 @@
-import get3sums from "../../../src/array/15_3Sum/index2";
+import get3sums from "../../../../src/array/15_3Sum/index2";
 
 test("1", () => {
   expect(get3sums([-1, 0, 1, 2, -1, -4])).toEqual([
