@@ -8,7 +8,7 @@
 const getNextPosition = (nums, i) => {
   let _num = i + nums[i];
   const len = nums.length;
-  return _num>= 0? (i + nums[i]) % n: n + ((i + nums[i]) % n);;
+  return _num>= 0? (i + nums[i]) % n: n + ((i + nums[i]) % n);
 };
 function circularArrayLoop(nums) {
   if (!nums || nums.length === 1) return false;
