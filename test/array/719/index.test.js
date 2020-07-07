@@ -1,4 +1,4 @@
-import findTrap from "../../src/719/index1";
+import findTrap from "../../../src/array/719/index1";
 
 // test(`arr:2`, () => {
 //   expect(findTrap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])).toBe(6);

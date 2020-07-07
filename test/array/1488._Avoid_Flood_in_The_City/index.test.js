@@ -1,5 +1,5 @@
-// import avoidFlood from "../../src/1488._Avoid_Flood_in_The_City/index";
-import avoidFlood from "../../src/1488._Avoid_Flood_in_The_City/index1";
+// import avoidFlood from "../../../src/array/1488._Avoid_Flood_in_The_City/index";
+import avoidFlood from "../../../src/array/1488._Avoid_Flood_in_The_City/index1";
 
 // test("1", () => {
 //   expect(avoidFlood([1, 2, 3, 4])).toEqual([-1, -1, -1, -1]);

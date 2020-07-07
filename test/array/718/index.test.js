@@ -1,4 +1,4 @@
-import findMaxPublicLength from "../../src/718/index.next";
+import findMaxPublicLength from "../../../src/array/718/index.next";
 
 // test(`arr:1`, () => {
 //   expect(getMaxRect([])).toBe(0);
