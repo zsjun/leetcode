@@ -1,23 +1,40 @@
 export default (nums, target) => {
   let end = nums.length - 1;
   let begin = 0;
-  let mid = Math.floor((begin + end) / 2);
 
+  if (!nums) return [-1, -1];
+  if (nums.length === 1) {
+    if (nums[0] === target) {
+      return [0, 0];
+    } else {
+      return [-1, -1];
+    }
+  }
   while (begin <= end) {
+    let mid = Math.floor((begin + end) / 2);
     if (nums[mid] < target) {
       begin = mid + 1;
-      mid = Math.floor((begin + end) / 2);
     }
     if (nums[mid] > target) {
       end = mid - 1;
-      mid = Math.floor((begin + end) / 2);
     }
+
     if (nums[mid] === target) {
-      for (; begin < mid; begin++) {
-        if (nums[begin] === target) {
-          return [begin, mid];
+      let min = mid;
+      for (let k = 0; k < mid; k++) {
+        if (nums[k] === target) {
+          min = k;
+          break;
         }
       }
+      let max = mid;
+      for (let j = end; j > mid; j--) {
+        if (nums[j] === target) {
+          max = j;
+          break;
+        }
+      }
+      return [min, max];
     }
   }
   return [-1, -1];
