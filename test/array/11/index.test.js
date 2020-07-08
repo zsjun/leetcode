@@ -1,4 +1,4 @@
-import maxArea from "../../../../src/array/11/index";
+import maxArea from "../../../src/array/11/index";
 
 // test(`arr:1`, () => {
 //   expect(getMaxRect([])).toBe(0);
