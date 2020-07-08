@@ -1,4 +1,4 @@
-import exist from "../../../src/array/79_Word_Search/index";
+import exist from "../../../src/array/79_Word_Search/index1";
 
 test("1", () => {
   expect(
@@ -80,6 +80,19 @@ test("5", () => {
         ["A", "D", "E", "E"],
       ],
       "ABCESEEEFS"
+    )
+  ).toEqual(true);
+});
+
+test("6", () => {
+  expect(
+    exist(
+      [
+        ["A", "B", "C", "E"],
+        ["S", "F", "C", "S"],
+        ["A", "D", "E", "E"],
+      ],
+      "ABCCED"
     )
   ).toEqual(true);
 });
