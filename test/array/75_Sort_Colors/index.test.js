@@ -1,24 +1,24 @@
-import sortColors from "../../../src/array/75_Sort_Colors/index";
+import sortColors from "../../../src/array/75_Sort_Colors/index1";
 
-// test("1", () => {
-//   expect(sortColors([2, 0, 2, 1, 1, 0])).toEqual([0, 0, 1, 1, 2, 2]);
-// });
+test("1", () => {
+  expect(sortColors([2, 0, 2, 1, 1, 0])).toEqual([0, 0, 1, 1, 2, 2]);
+});
 
-// test("2", () => {
-//   expect(sortColors([2, 0, 1])).toEqual([0, 1, 2]);
-// });
+test("2", () => {
+  expect(sortColors([2, 0, 1])).toEqual([0, 1, 2]);
+});
 
-// test("3", () => {
-//   expect(sortColors([0, 1, 0])).toEqual([0, 0, 1]);
-// });
+test("3", () => {
+  expect(sortColors([0, 1, 0])).toEqual([0, 0, 1]);
+});
 
-// test("4", () => {
-//   expect(sortColors([1, 0, 0])).toEqual([0, 0, 1]);
-// });
+test("4", () => {
+  expect(sortColors([1, 0, 0])).toEqual([0, 0, 1]);
+});
 
-// test("5", () => {
-//   expect(sortColors([1, 2, 0, 0])).toEqual([0, 0, 1, 2]);
-// });
+test("5", () => {
+  expect(sortColors([1, 2, 0, 0])).toEqual([0, 0, 1, 2]);
+});
 test("6", () => {
   expect(
     sortColors([

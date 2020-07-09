@@ -15,3 +15,8 @@ Follow up:
 A rather straight forward solution is a two-pass algorithm using counting sort.
 First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
 Could you come up with a one-pass algorithm using only constant space?
+
+思考路程
+1 这个很简单，但是写起来很多细节需要考虑，思路大体上利用两个指针，从两边往中间走，如果发现 2，就移动到后边，发现 0 就移动到前面
+2 遍历一遍，如果发现 2 则移动到后面，如果发现 0 则移动到前面，相比第一种方法，这种避免了很多无用的判断，简单粗暴
+时间复杂度 O(n) 空间复杂度 O(1)
