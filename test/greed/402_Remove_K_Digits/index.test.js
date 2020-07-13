@@ -1,4 +1,4 @@
-import removeKdigits from "../../../src/greed/402_Remove_K_Digits/index";
+import removeKdigits from "../../../src/greed/402_Remove_K_Digits/index1";
 
 test("1", () => {
   expect(removeKdigits("1432219", 3)).toBe("1219");
@@ -18,4 +18,8 @@ test("5", () => {
 });
 test("6", () => {
   expect(removeKdigits("1111111", 3)).toBe("1111");
+});
+
+test("7", () => {
+  expect(removeKdigits("1173", 2)).toBe("11");
 });
