@@ -5,9 +5,9 @@ const nameArr = process.argv.slice(2);
 
 const fileName = nameArr.join("_").replace(".", "");
 
-mkdirp(`./test/greed/${fileName}`).then(() =>
+mkdirp(`./test/hashMap/${fileName}`).then(() =>
   console.log(`made test dir ${fileName}`)
 );
-mkdirp(`./src/greed/${fileName}`).then(() =>
+mkdirp(`./src/hashMap/${fileName}`).then(() =>
   console.log(`made src dir  ${fileName}`)
 );
