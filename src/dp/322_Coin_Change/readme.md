@@ -19,4 +19,7 @@ You may assume that you have an infinite number of each kind of coin.
  dp[i] 可以是使用金额i 的最小张数
  dp[i] = Math.min(dp[i-1], dp[i-2], dp[i-5]) + 1
 
+ 心得
+1 只要找到dp[i] 和前面的dp的关系就ok，不用必须是dp[i] 和dp[i+1] 的关系
+
 
