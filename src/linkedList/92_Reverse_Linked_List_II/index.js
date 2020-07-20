@@ -28,7 +28,7 @@ export const getArr = (head) => {
 export const creatLinkList = (arr = []) => {
   let listNode = new ListNode(arr[arr.length - 1]);
   // const head = listNode;
-  for (let j = 0; j < arr.length - 1; j++) {
+  for (let j = arr.length - 2; j >= 0; j--) {
     const tempNode = new ListNode(arr[j], listNode);
     listNode = tempNode;
   }
@@ -37,8 +37,9 @@ export const creatLinkList = (arr = []) => {
 
 export default (head, m, n) => {
   let point = head;
-  let first = head;
+  let first = null;
   let begin = m;
+
   while (point && begin !== 1) {
     first = point;
     point = point.next;
@@ -54,23 +55,16 @@ export default (head, m, n) => {
     point = temp;
     k--;
   }
-
   if (first) {
     first.next = pre;
-  }
-  if (last) {
-    last.next = point;
-  }
-  if (point === null && !first) {
+  } else {
     head = pre;
   }
-  // while (head) {
-  //   console.log("1", head.val);
-  //   head = head.next;
-  // }
-  // if (point.next === null) {
-  //   head = point;
-  // }
-
+  if (last) {
+    if (last === head) {
+      head = pre;
+    }
+    last.next = point;
+  }
   return head;
 };
