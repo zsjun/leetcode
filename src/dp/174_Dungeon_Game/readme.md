@@ -22,4 +22,4 @@ The knight's health has no upper bound.
 Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
 
 思考路程
-1 和 64 类似
+1 和 64 类似,只不过从最下往上走
