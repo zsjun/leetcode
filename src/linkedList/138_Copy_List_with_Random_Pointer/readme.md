@@ -37,3 +37,4 @@ Number of Nodes will not exceed 1000.
 1 直接复制，第一遍先复制单链表，第二遍复制 random_index 链表，利用 map
 2 利用原来的链表，直接复制到现在的链表上，然后再取出节点
 
+算法时间复杂度 O（n）空间复杂度 O（1）
