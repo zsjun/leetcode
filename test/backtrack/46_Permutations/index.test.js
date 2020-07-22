@@ -1,4 +1,4 @@
-import subsets from "../../../src/backtrack/46_Permutations/index";
+import subsets from "../../../src/backtrack/46_Permutations/index1";
 
 test("1", () => {
   expect(subsets([1, 2, 3])).toEqual([
