@@ -2,17 +2,17 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const backtrack = (list, tempList, nums, i) => {
-  if (tempList.length === nums.length) {
+const backtrack = (list, tempList, nums, target) => {
+  if (tempList.length === target) {
     list.push([...tempList]);
     return;
   }
-
-  for (let k = i; k < nums.length; k++) {
-    tempList.push(nums[k]);
-    const _k = (k + 1) % nums.length;
-    console.log(_k);
-    backtrack(list, tempList, nums, _k);
+  if (nums.length === 0) return;
+  for (let k = 0; k < nums.length; k++) {
+    const copyNums = [...nums];
+    tempList.push(copyNums[k]);
+    copyNums.splice(k, 1);
+    backtrack(list, tempList, copyNums, target);
     tempList.splice(tempList.length - 1, 1);
   }
 };
@@ -21,7 +21,6 @@ export default function subsets(nums) {
   let list = [];
   let tempList = [];
   nums.sort((a, b) => a - b);
-  backtrack(list, tempList, nums, 0);
-  console.log(list);
+  backtrack(list, tempList, nums, nums.length);
   return list;
 }
