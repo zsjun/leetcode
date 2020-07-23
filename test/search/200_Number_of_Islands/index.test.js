@@ -1,4 +1,4 @@
-import numIslands from "../../../src/search/200_Number_of_Islands/index";
+import numIslands from "../../../src/search/200_Number_of_Islands/index1";
 
 // test("1", () => {
 //   expect(
