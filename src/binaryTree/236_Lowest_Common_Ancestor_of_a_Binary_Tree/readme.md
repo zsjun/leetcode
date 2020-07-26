@@ -21,3 +21,6 @@ Note:
 
 All of the nodes' values will be unique.
 p and q are different and both values will exist in the binary tree.
+
+思考路程
+1 直接遍历即可
