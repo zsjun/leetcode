@@ -33,3 +33,6 @@ wordList = ["hot","dot","dog","lot","log"]
 Output: 0
 
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+
+思考过程<br/>
+1 利用图，一个单词向下一个单词转换就是一条边，所以关键是构造出图，然后问题就转变为求最短路径的问题了。
