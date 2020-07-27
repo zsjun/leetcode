@@ -7,9 +7,9 @@ test("1", () => {
   ]);
 });
 
-test("2", () => {
-  expect(ladderLength("hit", "cog", ["hot", "dot", "dog", "lot", "log"])).toEqual([]);
-});
+// test("2", () => {
+//   expect(ladderLength("hit", "cog", ["hot", "dot", "dog", "lot", "log"])).toEqual([]);
+// });
 // test("3", () => {
 //   expect(
 //     ladderLength("qa", "sq", [

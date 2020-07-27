@@ -26,7 +26,6 @@ export default (beginWord, endWord, wordList) => {
 
     enumerateAllKeys(wordList[i], buildKeyToWordsList);
   }
-
   if (!graph[endWord]) return [];
 
   const buildNextList = (key, word, node) => {
