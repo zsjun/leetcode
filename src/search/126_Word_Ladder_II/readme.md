@@ -36,4 +36,4 @@ Explanation: The endWord "cog" is not in wordList, therefore no possible transfo
 
 思考路程<br/>
 
-1, 
+1, 开始想根据127的思路，然后把宽度遍历，转成深度遍历，然后记录，但是有的测试遍历还是过不了。
