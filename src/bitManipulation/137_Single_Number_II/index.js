@@ -18,6 +18,13 @@ const generate = (nums, k, single) => {
   }
   //2, 2, 3, 2
   for (let i = 0; i < nums.length; i++) {
+    // let temp = nums[i];
+    // counts[0] ^= temp;
+    // for (let i = 1; i < m; i++) {
+    //   counts[i] ^= counts[i - 1] & temp;
+    // }
+    // 获取统计
+    // xm = xm ^ (xm-1 & ... & x1 & temp)
     for (let j = m - 1; j >= 0; j--) {
       let temp = nums[i];
       for (let m1 = j - 1; m1 >= 0; m1--) {
@@ -25,7 +32,8 @@ const generate = (nums, k, single) => {
       }
       counts[j] ^= temp;
     }
-    //console.log(counts);
+    // console.log(counts);
+    // 减去k的倍数
     let mask = ~0;
     for (let i = m - 1; i >= 0; i--) {
       if (((k >> i) & 1) == 1) {
@@ -40,9 +48,9 @@ const generate = (nums, k, single) => {
       counts[i] &= mask;
     }
   }
-  // 得到p‘
+  // 得到p‘, 因为是k的倍数的都被置为0了，如果在x1到xm中出现1，则表示是该元素
   single %= k;
-  for (let i = 0; single != 0; i++) {
+  for (let i = 0; i < m; i++) {
     if ((single & 1) == 1) {
       return counts[i];
     } else {
