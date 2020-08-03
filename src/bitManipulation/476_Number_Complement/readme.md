@@ -21,4 +21,5 @@ You could assume no leading zero bit in the integer’s binary representation.
 This question is the same as 1009: https://leetcode.com/problems/complement-of-base-10-integer/
 
 思考过程<br/>
-1 比如 5 输出 2，其实就是 5 的二进制 101 和 111 的异或，而 1 输出 0，也是 1 和 1 的异或结果
+1 比如 5 输出 2，其实就是 5 的二进制 101 和 111 的异或，而 1 输出 0，也是 1 和 1 的异或结果,所以如何或缺111呢？
+

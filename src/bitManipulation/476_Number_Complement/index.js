@@ -4,11 +4,6 @@
  */
 export default (num) => {
   let k = num.toString(2).length;
-  console.log(k);
-  while (k >= 0) {
-    num ^= 1;
-    num >>= 1;
-    k--;
-  }
-  return num;
+  const m = Math.pow(2, k) - 1;
+  return num ^ m;
 };
