@@ -30,4 +30,4 @@ L, R will be integers L <= R in the range [1, 10^6].
 R - L will be at most 10000.
 
 思考路程<br/>
-1
+1 首先获得 1 的个数，然后判断是不是质数。<br/>
