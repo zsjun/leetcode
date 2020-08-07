@@ -5,5 +5,9 @@ const nameArr = process.argv.slice(2);
 
 const fileName = nameArr.join("_").replace(".", "");
 
-mkdirp(`./test/lineTree/${fileName}`).then(() => console.log(`made test dir ${fileName}`));
-mkdirp(`./src/lineTree/${fileName}`).then(() => console.log(`made src dir  ${fileName}`));
+mkdirp(`./test/binarySearch/${fileName}`).then(() =>
+  console.log(`made test dir ${fileName}`)
+);
+mkdirp(`./src/binarySearch/${fileName}`).then(() =>
+  console.log(`made src dir  ${fileName}`)
+);
