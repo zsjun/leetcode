@@ -1,16 +1,19 @@
 var serialize = function (root) {
   function travel(root, arr) {
-    if (root.val) {
+    if (!root) return null;
+    if (root) {
       arr.push(root.val);
     }
-    if (root.left) {
+    if (root && root.left) {
       travel(root.left, arr);
     }
-    if (root.right) {
+    if (root && root.right) {
       travel(root.right, arr);
     }
   }
+
   let res = [];
+
   travel(root, res);
   return res.join("#");
 };
@@ -22,8 +25,9 @@ var serialize = function (root) {
  * @return {TreeNode}
  */
 var deserialize = function (data) {
+  if (!data) return null;
   let res = data.split("#");
-  console.log(data);
+
   // return res
 
   function insert(root, val) {
@@ -45,8 +49,8 @@ var deserialize = function (data) {
     }
   }
   const rootNode = new TreeNode(res[0]);
-  for (let i = 1; i < res.length; ) {
-    insert(rootNode, res[i]);
+  for (let i = 1; i < res.length; i++) {
+    insert(rootNode, +res[i]);
   }
   return rootNode;
 };
