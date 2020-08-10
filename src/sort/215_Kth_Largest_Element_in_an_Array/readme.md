@@ -14,3 +14,6 @@ Output: 4
 
 Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
+
+思考路程<br/>
+1 直接排序，再输出就ok了
