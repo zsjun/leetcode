@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      fetch("http://192.168.100.80:8080/intelligence/api/v2/reported/page?typeId=1&start=1&end=99999")
+        .then((res) => {
+          return res.json;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
