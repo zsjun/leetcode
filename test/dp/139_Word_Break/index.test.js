@@ -1,4 +1,4 @@
-import wordBreak from "../../../src/dp/139_Word_Break/index";
+import wordBreak from "../../../src/dp/139_Word_Break/index1";
 
 test("1", () => {
   expect(wordBreak("catsandog", ["cats", "dog", "sand", "and", "cat"])).toBe(false);
