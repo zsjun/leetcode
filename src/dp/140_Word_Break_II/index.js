@@ -13,9 +13,6 @@ const wordBreak = (s, wordDict) => {
   if (wordDict.length === 0) {
     return [];
   }
-  if (wordDict.length === 0) {
-    return [];
-  }
   if (wordDict.length === 1) {
     return wordDict[0] === s ? wordDict : [];
   }
@@ -32,9 +29,6 @@ const wordBreak = (s, wordDict) => {
           if (!dp[j] && i === str1.length) {
             dp[i] = str1;
           } else {
-            // for (let k = 0; k < dp[j].length; k++) {
-            //   dp[i].push([...dp[j][k], str1]);
-            // }
             let arrDp = dp[j] && dp[j].indexOf(",") > -1 ? dp[j].split(",") : dp[j] ? [dp[j]] : [];
 
             for (let k = 0; k < arrDp.length; k++) {
