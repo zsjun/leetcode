@@ -29,6 +29,5 @@ export default (nums) => {
       dp[i] = 1;
     }
   }
-  console.log(dp);
   return max;
 };
