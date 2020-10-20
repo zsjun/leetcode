@@ -7,32 +7,29 @@
 const isMatch = (s, p) => {
   const sLen = s.length;
   const pLen = p.length;
-
-  if (s == null || p == null) {
-    return false;
-  }
+  // console.log(sLen, pLen);
+  // if (sLen === 0 || pLen === 0) {
+  //   return false;
+  // }
 
   let dp = [];
   for (let i = 0; i <= sLen; i++) {
     dp[i] = new Array(pLen + 1).fill(false);
   }
   dp[0][0] = true;
-  for (let j = 0; j < pLen; j++) {
-    if (p[j] === "*" && j >= 1 && dp[0][j - 1]) {
+  for (let j = 1; j < pLen; j++) {
+    if (p.charAt(j) === "*" && dp[0][j - 1]) {
       dp[0][j + 1] = true;
     }
   }
-
+  // console.log(dp);
   for (let i = 0; i < sLen; i++) {
     for (let j = 0; j < pLen; j++) {
-      if (p.charAt(j) == ".") {
+      if (p.charAt(j) === "." || p.charAt(j) === s.charAt(i)) {
         dp[i + 1][j + 1] = dp[i][j];
       }
-      if (p.charAt(j) == s.charAt(i)) {
-        dp[i + 1][j + 1] = dp[i][j];
-      }
-      if (p.charAt(j) == "*") {
-        if (j >= 1 && p.charAt(j - 1) != s.charAt(i) && p.charAt(j - 1) != ".") {
+      if (p.charAt(j) === "*") {
+        if (j >= 1 && p.charAt(j - 1) !== s.charAt(i) && p.charAt(j - 1) !== ".") {
           dp[i + 1][j + 1] = dp[i + 1][j - 1];
         } else {
           if (j >= 1) {
