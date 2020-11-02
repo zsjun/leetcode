@@ -5,6 +5,7 @@
 var LRUCache = function (capacity) {
   this.map = new Map();
   this.size = capacity;
+  this.sortKeys = [];
 };
 
 /**
@@ -13,10 +14,14 @@ var LRUCache = function (capacity) {
  */
 LRUCache.prototype.get = function (key) {
   if (this.map.has(key)) {
-    const v = this.map.get(key);
-    this.map.delete(key);
-    this.map.set(key, v);
-    return v;
+    for (let i = 0; i < this.sortKeys.length; i++) {
+      if (this.sortKeys[i] === key) {
+        this.sortKeys.splice(i, 1);
+        break;
+      }
+    }
+    this.sortKeys.push(key);
+    return this.map.get(key);
   } else {
     return -1;
   }
@@ -28,14 +33,22 @@ LRUCache.prototype.get = function (key) {
  * @return {void}
  */
 LRUCache.prototype.put = function (key, value) {
+  if (this.map.size >= this.size && !this.map.has(key)) {
+    const key1 = this.sortKeys[0];
+    this.map.delete(key1);
+    this.sortKeys.shift();
+  }
   if (this.map.has(key)) {
     this.map.delete(key);
+    for (let i = 0; i < this.sortKeys.length; i++) {
+      if (this.sortKeys[i] === key) {
+        this.sortKeys.splice(i, 1);
+        break;
+      }
+    }
   }
   this.map.set(key, value);
-  if (this.map.size > this.size) {
-    this.map.delete(this.map.keys().next().value);
-  }
-  console.log(this.map);
+  this.sortKeys.push(key);
 };
 
 /**

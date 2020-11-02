@@ -1,4 +1,4 @@
-import divide from "../../../src/top_interview/29_Divide_Two_Integers/index";
+import divide from "../../../src/top_interview/29_Divide_Two_Integers/index1";
 
 // test("1", () => {
 //   expect(divide(10, 3)).toBe(3);
