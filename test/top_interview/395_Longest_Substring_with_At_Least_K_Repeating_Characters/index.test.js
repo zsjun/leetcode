@@ -1,4 +1,4 @@
-import longestSubstring from "../../../src/top_interview/395_Longest_Substring_with_At_Least_K_Repeating_Characters/index";
+import longestSubstring from "../../../src/top_interview/395_Longest_Substring_with_At_Least_K_Repeating_Characters/index1";
 
 test("1", () => {
   expect(longestSubstring("aaabb", 3)).toBe(3);
@@ -14,4 +14,8 @@ test("3", () => {
 
 test("4", () => {
   expect(longestSubstring("bbaaacbd", 3)).toBe(3);
+});
+
+test("5", () => {
+  expect(longestSubstring("ababbc", 2)).toBe(5);
 });
