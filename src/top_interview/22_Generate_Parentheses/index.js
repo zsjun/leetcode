@@ -2,6 +2,8 @@
  * @param {number} n
  * @return {string[]}
  */
+// res 是最后结果，str是每次拿到字符串，open 是加入了多少个“（”，close 是加入了多少个“）”，max 是一共有多少对“（）”
+
 const backtrack = (res, str, open, close, max) => {
   console.log(str);
   if (str.length === max * 2) {
