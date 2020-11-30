@@ -43,6 +43,5 @@ const quickSort = (nums, p, r) => {
 export default (nums, k) => {
   // nums.sort((a, b) => a - b);
   quickSort(nums, 0, nums.length - 1);
-  console.log(nums);
   return nums[nums.length - k];
 };
