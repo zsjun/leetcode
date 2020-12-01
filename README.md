@@ -12,6 +12,9 @@
 <td align="center" width="50%">
 <img height=60px src="https://www.vectorlogo.zone/logos/java/java-ar21.svg">
 </td>
+<td align="center" width="50%">
+<img height=60px src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg">
+</td>
 </tr>
 </tbody>
 </table>
@@ -20,12 +23,6 @@
 <table>
 <tbody>
  <tr>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/mysql/mysql-official.svg">
-</td>
-</td>
-
-</tr>
 
 
 <td align="center" width="33%">
