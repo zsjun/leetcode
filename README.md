@@ -41,9 +41,9 @@
 </tbody>
 </table>
 
-<td align="center" width="50%">
+<!-- <td align="center" width="50%">
 <img height=60px src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg">
-</td>
+</td> -->
 </tr>
 </tbody>
 </table>
