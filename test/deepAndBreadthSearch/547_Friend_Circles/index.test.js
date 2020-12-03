@@ -1,4 +1,4 @@
-import findCircleNum from "../../../src/deepAndBreadthSearch/547_Friend_Circles/index";
+import findCircleNum from "../../../src/deepAndBreadthSearch/547_Friend_Circles/index1";
 
 test("1", () => {
   expect(
