@@ -8,7 +8,27 @@ const dirs = [
   [1, 0],
   [0, -1],
 ];
-// 主函数
+// 辅函数
+const dfs = (matrix, curI, curJ, reach) => {
+  let nextI;
+  let nextJ;
+  if (reach[curI][curJ]) {
+    return;
+  }
+  reach[curI][curJ] = 1;
+  for (let i = 0; i < 4; i++) {
+    nextI = curI + dirs[i][0];
+    nextJ = curJ + dirs[i][1];
+    if (nextI >= 0 && nextI < matrix.length && nextJ >= 0 && nextJ < matrix[0].length) {
+      if (matrix[nextI][nextJ] >= matrix[curI][curJ] && reach[nextI][nextJ] === 0) {
+        dfs(matrix, nextI, nextJ, reach);
+      }
+    }
+  }
+};
+
+// Runtime: 112 ms, faster than 94.23% of JavaScript online submissions for Pacific Atlantic Water Flow.
+// Memory Usage: 46.9 MB, less than 64.74% of JavaScript online submissions for Pacific Atlantic Water Flow.
 export default (matrix) => {
   if (matrix.length === 0 || matrix[0].length === 0) {
     return [];
@@ -42,22 +62,4 @@ export default (matrix) => {
     }
   }
   return res;
-};
-// 辅函数
-const dfs = (matrix, curI, curJ, reach) => {
-  let nextI;
-  let nextJ;
-  if (reach[curI][curJ]) {
-    return;
-  }
-  reach[curI][curJ] = 1;
-  for (let i = 0; i < 4; i++) {
-    nextI = curI + dirs[i][0];
-    nextJ = curJ + dirs[i][1];
-    if (nextI >= 0 && nextI < matrix.length && nextJ >= 0 && nextJ < matrix[0].length) {
-      if (matrix[nextI][nextJ] >= matrix[curI][curJ] && reach[nextI][nextJ] === 0) {
-        dfs(matrix, nextI, nextJ, reach);
-      }
-    }
-  }
 };

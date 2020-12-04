@@ -1,4 +1,4 @@
-import pacificAtlantic from "../../../src/deepAndBreadthSearch/417_Pacific_Atlantic_Water_Flow/index";
+import pacificAtlantic from "../../../src/deepAndBreadthSearch/417_Pacific_Atlantic_Water_Flow/index1";
 
 test("1", () => {
   expect(
