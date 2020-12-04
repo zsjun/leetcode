@@ -41,7 +41,6 @@ export default (matrix) => {
       }
     }
   }
-  console.log(res);
   return res;
 };
 // 辅函数
@@ -56,7 +55,7 @@ const dfs = (matrix, curI, curJ, reach) => {
     nextI = curI + dirs[i][0];
     nextJ = curJ + dirs[i][1];
     if (nextI >= 0 && nextI < matrix.length && nextJ >= 0 && nextJ < matrix[0].length) {
-      if (matrix[nextI][nextJ] <= matrix[curI][curJ] && reach[nextI][nextJ] === 0) {
+      if (matrix[nextI][nextJ] >= matrix[curI][curJ] && reach[nextI][nextJ] === 0) {
         dfs(matrix, nextI, nextJ, reach);
       }
     }
