@@ -25,9 +25,8 @@ const valid = (chess, row, col) => {
 };
 const solve = (res, chess, row) => {
   if (row === chess.length) {
-    let temp = [];
-    chess.forEach((item) => {
-      temp.push(item.join(""));
+    const temp = chess.map((item) => {
+      return item.join("");
     });
     res.push(temp);
     return;
