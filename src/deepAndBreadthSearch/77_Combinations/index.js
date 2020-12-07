@@ -3,6 +3,12 @@
  * @param {number} k
  * @return {number[][]}
  */
+const dirs = [
+  [-1, 0],
+  [0, 1],
+  [1, 0],
+  [0, -1],
+];
 const backTrack = (nums, index, k, loopRes, res) => {
   if (loopRes.length === k) {
     res.push(loopRes);
