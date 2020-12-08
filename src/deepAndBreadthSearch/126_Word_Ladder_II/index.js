@@ -14,7 +14,7 @@ const wordCanTransform = (word, otherWord) => {
       return false;
     }
   }
-  return true;
+  return count === 1;
 };
 const same = (oldArr, newArr) => {
   return oldArr.join("") === newArr.join("");
@@ -27,12 +27,21 @@ const gfs = (beginWord, endWord, wordList, gfsRes, res) => {
       res.push(gfsRes);
     } else {
       res.sort((a, b) => b.length - a.length);
-      if(gfsResLen>res[0].length) {
-        return
-      }else if(gfsResLen===res[0].length && !same(gfsRes,res[0])) {
-
+      if (gfsResLen > res[0].length) {
+        return;
       }
-      let k = res.length - 1;
+      let resI = res.length - 1;
+      while (resI >= 0 && res[resI].length > gfsResLen) {
+        res.shift();
+        resI--;
+      }
+      if (res.length > 0) {
+        if (!same(gfsRes, res[0])) {
+          res.push(gfsRes);
+        }
+      } else {
+        res.push(gfsRes);
+      }
     }
     return;
   }
