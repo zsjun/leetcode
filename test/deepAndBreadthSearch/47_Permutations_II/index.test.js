@@ -19,13 +19,25 @@ import permuteUnique from "../../../src/deepAndBreadthSearch/47_Permutations_II/
 //   ]);
 // });
 
+// test("1", () => {
+//   expect(permuteUnique([2, 2, 1, 1])).toEqual([
+//     [1, 1, 2, 2],
+//     [1, 2, 1, 2],
+//     [1, 2, 2, 1],
+//     [2, 1, 1, 2],
+//     [2, 1, 2, 1],
+//     [2, 2, 1, 1],
+//   ]);
+// });
+
 test("1", () => {
-  expect(permuteUnique([2, 2, 1, 1])).toEqual([
-    [1, 1, 2, 2],
-    [1, 2, 1, 2],
-    [1, 2, 2, 1],
-    [2, 1, 1, 2],
-    [2, 1, 2, 1],
-    [2, 2, 1, 1],
+  expect(permuteUnique([1, 2, 2])).toEqual([
+    [1, 2, 2],
+    [2, 1, 2],
+    [2, 2, 1],
   ]);
+});
+
+test("2", () => {
+  expect(permuteUnique([2, 2])).toEqual([[2, 2]]);
 });

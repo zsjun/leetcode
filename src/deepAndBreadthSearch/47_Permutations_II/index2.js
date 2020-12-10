@@ -9,11 +9,6 @@ const swap = (nums, i, j) => {
 };
 const backTracking = (nums, level, res) => {
   if (level === nums.length - 1) {
-    for (let k = 0; k < res.length; k++) {
-      if (res[k].join("") === nums.join("")) {
-        return;
-      }
-    }
     res.push(nums);
     return;
   }
@@ -24,7 +19,9 @@ const backTracking = (nums, level, res) => {
     if (level !== i) {
       swap(nums, i, level);
     }
+    used.set(nums[i], 1);
     backTracking([...nums], level + 1, res);
+    used.delete(nums[i]);
     if (i !== level) {
       swap(nums, level, i);
     }
@@ -36,6 +33,7 @@ export default (nums) => {
   if (nums.length === 1) return [nums];
   const res = [];
   nums.sort((a, b) => a - b);
-  backTracking(nums, 0, res);
+  const used = new Map();
+  backTracking(nums, 0, used, res);
   return res;
 };
