@@ -1,8 +1,7 @@
 213. House Robber II (Medium)
-强盗抢劫题目的 follow-up，如何处理环形数组呢? 53. Maximum Subarray (Easy)
-  经典的一维动态规划题目，试着把一维空间优化为常量吧。
+强盗抢劫题目的 follow-up，如何处理环形数组呢?
 
-53. Maximum Subarray (Easy)
+1.  Maximum Subarray (Easy)
 经典的一维动态规划题目，试着把一维空间优化为常量吧。
 343. Integer Break (Medium)
   分割类型题，先尝试用动态规划求解，再思考是否有更简单的解法。
