@@ -10,8 +10,8 @@ export default (weights, valuse, n, w) => {
 
   for (let i = 1; i <= n; i++) {
     for (let j = w; j >= 0; j--) {
-      if (j >= weights[i]) {
-        dp[j] = Math.max(dp[j], dp[j - weights[i]] + valuse[i]);
+      if (j >= weights[i - 1]) {
+        dp[j] = Math.max(dp[j], dp[j - weights[i - 1]] + valuse[i - 1]);
       }
     }
   }

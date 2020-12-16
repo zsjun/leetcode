@@ -13,9 +13,11 @@ export default (weights, valuse, n, w) => {
 
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= w; j++) {
+      // 如果选择，
       if (j >= weights[i - 1]) {
-        dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + valuse[i - 1]);
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - weights[i - 1]] + valuse[i - 1]);
       } else {
+        //如果不选择
         dp[i][j] = dp[i - 1][j];
       }
     }
