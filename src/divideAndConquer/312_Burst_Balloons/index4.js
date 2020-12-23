@@ -1,3 +1,5 @@
+// Runtime: 236 ms, faster than 8.67% of JavaScript online submissions for Burst Balloons.
+// Memory Usage: 41.1 MB, less than 53.73% of JavaScript online submissions for Burst Balloons.
 export default (nums) => {
   const n = nums.length;
   nums = [1, ...nums, 1];

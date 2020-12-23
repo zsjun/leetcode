@@ -3,8 +3,6 @@
  * @return {number}
  */
 
-// [3, 1, 5, 8];
-// 1086136;
 const burst = (memo, nums, left, right) => {
   if (left + 1 === right) return 0;
   if (memo[left][right] > 0) return memo[left][right];
@@ -16,6 +14,8 @@ const burst = (memo, nums, left, right) => {
   return ans;
 };
 
+// Runtime: 448 ms, faster than 5.06% of JavaScript online submissions for Burst Balloons.
+// Memory Usage: 40.1 MB, less than 89.40% of JavaScript online submissions for Burst Balloons.
 export default (nums) => {
   const len = nums.length;
   const copyNums = new Array(len + 2);
