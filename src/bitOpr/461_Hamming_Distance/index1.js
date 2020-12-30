@@ -3,12 +3,10 @@
  * @param {number} y
  * @return {number}
  */
+
 export default (x, y) => {
-  let z = x ^ y;
-  let bits = 0;
-  while (z !== 0) {
-    bits++;
-    z &= z - 1;
-  }
-  return bits;
+  return (x ^ y)
+    .toString(2)
+    .split("")
+    .filter((num) => num === "1").length;
 };

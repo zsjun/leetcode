@@ -3,12 +3,13 @@
  * @param {number} y
  * @return {number}
  */
+
 export default (x, y) => {
   let z = x ^ y;
-  let bits = 0;
-  while (z !== 0) {
-    bits++;
+  let res = 0;
+  while (z != 0) {
+    res++;
     z &= z - 1;
   }
-  return bits;
+  return res;
 };
