@@ -9,11 +9,6 @@ var MyQueue = function () {
   this.front = "";
 };
 
-// ["MyQueue","push","push","peek","pop","empty"]
-// [[],[1],[2],[],[],[]]
-// Output
-// [null,null,null,1,2,false]
-
 /**
  * Push element x to the back of queue.
  * @param {number} x
