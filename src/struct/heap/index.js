@@ -3,7 +3,7 @@ class Heap {
     this.arr = initArr;
     const len = this.arr.length - 1;
     this.buildHeap(len);
-    console.log(112, this.arr);
+    // console.log(112, this.arr);
   }
   // 最大值
   top() {
