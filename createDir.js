@@ -1,7 +1,7 @@
 var fs = require("fs");
 const mkdirp = require("mkdirp");
 
-const nameDir = "struct";
+const nameDir = "dp2";
 const nameArr = process.argv.slice(2);
 
 const fileName = nameArr.join("_").replace(".", "");
