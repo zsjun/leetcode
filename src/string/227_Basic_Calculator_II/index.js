@@ -2,35 +2,40 @@
  * @param {string} si
  * @return {number}
  */
-// "3+2*2";
-// 7;
-// s = " 3/2 ";
-// 1;
-// (" 3+5 / 2 ");
-// 5;
+// Runtime: 100 ms, faster than 78.72% of JavaScript online submissions for Basic Calculator II.
+// Memory Usage: 46.9 MB, less than 32.83% of JavaScript online submissions for Basic Calculator II.
 export default (s) => {
-  const numberStack = [];
-  const oprStack = [];
-  let begin = 0;
-  for (let i = 0; i < s.length; i++) {
-    switch (s.charAt(i)) {
-      case "+":
-        oprStack.push("+");
-        numberStack.push(s.substring(begin, i + 1));
-        begin = i + 1;
-        break;
-      case "+":
-        oprStack.push("+");
-        numberStack.push(s.substring(begin, i + 1));
-        begin = i + 1;
-        break;
-
-      default:
-        break;
+  s = s.replace(/\s+/g, "");
+  let len = s.length;
+  if (!s || len === 0) return 0;
+  const stack = [];
+  let num = 0;
+  let opr = "+";
+  for (let i = 0; i < len; i++) {
+    if (/^[0-9]+.?[0-9]*$/.test(s.charAt(i))) {
+      num = num * 10 + s.charCodeAt(i) - 48;
+    }
+    if (!/^[0-9]+.?[0-9]*$/.test(s.charAt(i)) || i === len - 1) {
+      if (opr === "-") {
+        stack.push(-num);
+      }
+      if (opr === "+") {
+        stack.push(num);
+      }
+      if (opr === "*") {
+        stack.push(stack.pop() * num);
+      }
+      if (opr === "/") {
+        const tempNum = stack.pop();
+        stack.push(tempNum > 0 ? Math.floor(tempNum / num) : Math.ceil(tempNum / num));
+      }
+      opr = s.charAt(i);
+      num = 0;
     }
   }
-  if (oprStack.length === 0) {
-    s = s.trim();
-    return +s;
-  }
+
+  // let res = 0;
+  // console.log(stack);
+
+  return stack.reduce((a, b) => a + b);
 };
