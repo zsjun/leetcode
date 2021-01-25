@@ -34,8 +34,5 @@ export default (s) => {
     }
   }
 
-  // let res = 0;
-  // console.log(stack);
-
   return stack.reduce((a, b) => a + b);
 };
