@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {string}
  */
-
 export default (s) => {
   const len = s.length;
   const dp = [];
