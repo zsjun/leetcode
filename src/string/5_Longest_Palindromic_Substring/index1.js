@@ -29,5 +29,6 @@ export default (s) => {
       }
     }
   }
+
   return s.substring(begin, end);
 };

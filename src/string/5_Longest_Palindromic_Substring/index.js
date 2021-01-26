@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {string}
  */
-
 const addBoundaries = (s, divide) => {
   const len = s.length;
   if (len === 0) {
