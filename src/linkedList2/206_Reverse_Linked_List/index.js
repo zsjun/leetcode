@@ -33,7 +33,6 @@ var reverseList = function (head) {
 };
 export default (head) => {
   let newHead = null;
-  //return resver(head, newHead);
   while (head) {
     const temp1 = head.next;
     head.next = newHead;
