@@ -1,7 +1,7 @@
 var fs = require("fs");
 const mkdirp = require("mkdirp");
 
-const nameDir = "linkedList2";
+const nameDir = "tree";
 const nameArr = process.argv.slice(2);
 
 const fileName = nameArr.join("_").replace(".", "");
