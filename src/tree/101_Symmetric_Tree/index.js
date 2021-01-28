@@ -10,7 +10,20 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-const isSymmetric1 = (root) => {};
+const isSymmetric1 = (left, right) => {
+  if (!left && !right) {
+    return true;
+  }
+  if (!left || !right) {
+    return false;
+  }
+  if (left.val != right.val) {
+    return false;
+  }
+  return isSymmetric1(left.left, right.right) && isSymmetric1(left.right, right.left);
+};
+// Runtime: 92 ms, faster than 58.10% of JavaScript online submissions for Symmetric Tree.
+// Memory Usage: 40.5 MB, less than 66.28% of JavaScript online submissions for Symmetric Tree.
 export default (root) => {
-  return isSymmetric1(root, stack1, stack2);
+  return root ? isSymmetric1(root.left, root.right) : true;
 };
