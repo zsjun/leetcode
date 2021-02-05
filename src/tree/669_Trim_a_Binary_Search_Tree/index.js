@@ -17,26 +17,42 @@ function TreeNode(val, left, right) {
  * @param {number} high
  * @return {TreeNode}
  */
-const inorder = (parent, root, low, high) => {
-  if (root && root.val<low) {
-      parent.left = null;
-      parent.right=
+const inorder = (parent, root, low, high, dir) => {
+  if (root && root.val < low) {
+    if (dir === "left") {
+      parent.left = root.right;
+      root.right = null;
+      inorder(parent, parent.left, low, high, "left");
+    } else {
+      parent.right = root.right;
+      root.right = null;
+      inorder(parent, parent.right, low, high, "right");
+    }
+  } else if (root && root.val > high) {
+    if (dir === "left") {
+      parent.left = root.left;
+      root.right = null;
+      inorder(parent, parent.left, low, high, "left");
+    } else {
+      parent.right = root.left;
+      root.right = null;
+      inorder(parent, parent.right, low, high, "right");
+    }
+  } else {
+    if (root && root.left) {
+      inorder(root, root.left, low, high, "left");
+    }
+    if (root && root.right) {
+      inorder(root, root.right, low, high, "right");
+    }
   }
-  inorder(root, root.left, low,high);
 };
 
-// const find = (root, low, high) => {
-
-//   find(root.left, low, high);
-//   if(root.val)
-
-//   root.left = find(root.left, low, root.val);
-//   root.right = find(root.right, root.val, high);
-// };
-
+// Runtime: 116 ms, faster than 34.98% of JavaScript online submissions for Trim a Binary Search Tree.
+// Memory Usage: 44 MB, less than 91.36% of JavaScript online submissions for Trim a Binary Search Tree.
 export default (root, low, high) => {
-  const res = [];
   const parent = new TreeNode();
   parent.left = root;
-  inorder(parent, root, low, high);
+  inorder(parent, root, low, high, "left");
+  return parent.left;
 };
