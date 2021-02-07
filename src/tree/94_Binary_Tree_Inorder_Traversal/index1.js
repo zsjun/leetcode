@@ -14,25 +14,17 @@
 //  Memory Usage: 38.4 MB, less than 93.23% of JavaScript online submissions for Binary Tree Inorder Traversal.
 export default (root) => {
   if (!root) return [];
-  const stack = [root];
+  const stack = [];
   const res = [];
-  let visited = false;
-  while (stack.length > 0) {
-    let pre = stack[stack.length - 1];
-    while (pre && !visited) {
-      pre = pre.left;
-      if (pre) {
-        stack.push(pre);
-      }
+  let cur = root;
+  while (cur || stack.length > 0) {
+    while (cur) {
+      stack.push(cur);
+      cur = cur.left;
     }
-    const node = stack.pop();
-    res.push(node.val);
-    if (node.right) {
-      stack.push(node.right);
-      visited = false;
-    } else {
-      visited = true;
-    }
+    cur = stack.pop();
+    res.push(cur.val);
+    cur = cur.right;
   }
   return res;
 };
