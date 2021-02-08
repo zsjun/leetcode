@@ -3,8 +3,8 @@
  * @param {number[][]} prerequisites
  * @return {number[]}
  */
-// Runtime: 152 ms, faster than 20.40% of JavaScript online submissions for Course Schedule II.
-// Memory Usage: 42.6 MB, less than 87.92% of JavaScript online submissions for Course Schedule II.
+//  Runtime: 96 ms, faster than 81.21% of JavaScript online submissions for Course Schedule II.
+//  Memory Usage: 42.5 MB, less than 89.26% of JavaScript online submissions for Course Schedule II.
 export default (numCourses, prerequisites) => {
   const res = [];
   const queue = [];
