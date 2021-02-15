@@ -12,6 +12,7 @@ var reachableNodes = function (edges, M, N) {
   heap.insert([0, distance[0]]);
   while (heap.length != 0) {
     let t = heap.remove();
+    console.log(t);
     if (state[t[0]] == 1) continue;
     if (distance[t[0]] <= M) res++;
     state[t[0]] = 1;
@@ -22,6 +23,7 @@ var reachableNodes = function (edges, M, N) {
       }
     }
   }
+
   for (let i = 0; i < edges.length; i++) {
     let a = M - distance[edges[i][0]] >= 0 ? M - distance[edges[i][0]] : 0,
       b = M - distance[edges[i][1]] >= 0 ? M - distance[edges[i][1]] : 0;

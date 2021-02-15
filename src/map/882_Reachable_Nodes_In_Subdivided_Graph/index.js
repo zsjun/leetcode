@@ -59,6 +59,7 @@ class Heap {
 }
 export default (edges, maxMoves, n) => {
   let res = 0;
+  // 最小堆
   const priorityQueue = new Heap();
   const visited = new Array(n).fill(0);
   const graph = new Array(n);
@@ -77,16 +78,19 @@ export default (edges, maxMoves, n) => {
   while (priorityQueue.length != 0) {
     let cur = priorityQueue.remove();
     const curNode = cur[0];
+    // 如果已经访问过了，则执行下一个循环
     if (visited[curNode] === 1) continue;
     if (distance[curNode] <= maxMoves) res++;
     visited[curNode] = 1;
-     for (let i of graph[curNode]) {
+    for (let i of graph[curNode]) {
+      // 发现从0节点到所有节点的最小距离
       if (distance[i[0]] > distance[curNode] + i[1] + 1) {
         distance[i[0]] = distance[curNode] + i[1] + 1;
         priorityQueue.insert([i[0], distance[i[0]]]);
       }
     }
   }
+  // 能到到的节点前面在while循环里边已经统计完了，现在需要统计各个边上可以到达的节点
   for (let i = 0; i < edges.length; i++) {
     const a = maxMoves - distance[edges[i][0]] >= 0 ? maxMoves - distance[edges[i][0]] : 0;
     const b = maxMoves - distance[edges[i][1]] >= 0 ? maxMoves - distance[edges[i][1]] : 0;

@@ -1,12 +1,12 @@
-import reachableNodes from "../../../src/map/882_Reachable_Nodes_In_Subdivided_Graph/index";
+import reachableNodes from "../../../src/map/882_Reachable_Nodes_In_Subdivided_Graph/index1";
 
-[
-  [-1, 4, 7, 8, 7],
-  [4, -1, 0, 9, 4],
-  [7, 0, -1, 1, 3],
-  [8, 9, 1, -1, 9],
-  [7, 4, 3, 9, -1],
-];
+// [
+//   [-1, 4, 7, 8, 7],
+//   [4, -1, 0, 9, 4],
+//   [7, 0, -1, 1, 3],
+//   [8, 9, 1, -1, 9],
+//   [7, 4, 3, 9, -1],
+// ];
 test("1", () => {
   expect(
     reachableNodes(
