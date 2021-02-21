@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 9.4.8 (461812)"/><meta name="author" content="zousjun@126.com"/><meta name="created" content="2020-11-30 06:42:29 +0000"/><meta name="source" content="desktop.mac"/><meta name="updated" content="2021-02-21 00:52:15 +0000"/><meta name="content-class" content="yinxiang.markdown"/><title>第4章排序算法</title></head><body><div style="font-size: 14px; margin: 0; padding: 0; width: 100%;"><div style="line-height: 160%; box-sizing: content-box;"><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">简单的排序算法
+</a><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333; margin-top: 0; margin-bottom: 0;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">215 快速选择
+</a><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333; margin-top: 0; margin-bottom: 0;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">题目描述
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">思考 1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现2
+</a></li></ul></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">451. 根据字符出现频率排序
+</a><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333; margin-top: 0; margin-bottom: 0;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">题目描述
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">思考 1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现1
+</a></li></ul></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">347. 前 K 个高频元素
+</a><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333; margin-top: 0; margin-bottom: 0;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">题目描述
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">思考 1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现1
+</a></li></ul></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">75. 颜色分类
+</a><ul style="line-height: 160%; box-sizing: content-box; display: block; list-style-type: disc; padding-left: 30px; margin: 6px 0 10px; color: #333; margin-top: 0; margin-bottom: 0;"><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">题目描述
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">思考 1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现1
+</a></li><li style="line-height: 160%; box-sizing: content-box; position: relative;"><a style="line-height: 160%; box-sizing: content-box; text-decoration: underline; color: #5286bc;">实现2
+</a></li></ul></li></ul></li></ul></div><h1 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 41px; border-bottom: 3px double #999; color: #000; margin-top: 14px;">简单的排序算法</h1>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">1 排序是最常见的算法，基本上每本书开头都是先介绍常用的各种排序算法。</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">排序算法总体来说，只是种类繁多，但是基本上都不是很难，都是些基础，这些多写，打好基础就可以了。</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">215 快速选择</h2>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">题目描述</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">在一个未排序的数组中，找到第 k 大的数字。&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">注意，这里你可以默认肯定有解&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子1&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: [3,2,1,5,6,4] and k = 2&lt;br/&gt;<br/>
+输出: 5&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子2&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: [3,2,3,1,2,4,5,5,6] and k = 4&lt;br/&gt;<br/>
+输出: 4&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">思考 1</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">基本上先排序，然后直接输出就可以了 &lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">这里也可以自己实现，比如使用快速排序，一般快排是查找第k大数的常用方法&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现1</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;"><span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */</span>
+
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">export</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">default</span> (nums, k) =&gt; {
+  nums.sort(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">a, b</span>) =&gt;</span> b - a);
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> nums[k - <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>];
+};
+
+</code></pre>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现2</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;"><span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */</span>
+
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> getPosition = <span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">nums, p, r</span>) =&gt;</span> {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> mid = <span style="color: #4ec9b0; line-height: 160%; box-sizing: content-box;">Math</span>.floor(p + (r - p) / <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">2</span>);
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> temp;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> pos;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> tempArr = [nums[p], nums[r], nums[mid]].sort(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">a, b</span>) =&gt;</span> a - b);
+  temp = tempArr[<span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>];
+  pos = temp === nums[p] ? p : temp === nums[r] ? r : mid;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> i = p; i &lt;= r; i++) {
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (nums[i] &lt; temp &amp;&amp; i &gt; pos) {
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> _temp = nums[i];
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (i &gt; pos) {
+        <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> j = i; j &gt; pos; j--) {
+          nums[j] = nums[j - <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>];
+        }
+      }
+      nums[pos] = _temp;
+      pos++;
+    } <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">else</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (nums[i] &gt; temp &amp;&amp; i &lt; pos) {
+      nums[pos] = nums[i];
+      nums[i] = temp;
+      pos = i;
+    }
+  }
+  nums[pos] = temp;
+
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> pos;
+};
+<span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">// p 起始位置， r 结束位置</span>
+<span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">// 3, 2, 3, 1, 2, 4, 5, 5, 6</span>
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> quickSort = <span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">nums, p, r</span>) =&gt;</span> {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (p &lt; r) {
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> q = getPosition(nums, p, r);
+    quickSort(nums, p, q - <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>);
+    quickSort(nums, q + <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>, r);
+  }
+};
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">export</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">default</span> (nums, k) =&gt; {
+  <span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">// nums.sort((a, b) =&gt; a - b);</span>
+  quickSort(nums, <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>, nums.length - <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>);
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> nums[nums.length - k];
+};
+
+</code></pre>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">实现1的算法时间复杂度 O(nlgn), 空间复杂度 O(1)</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">451. 根据字符出现频率排序</h2>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">题目描述</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">给定一个字符串，请将字符串里的字符按照出现的频率降序排列。&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子1&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: "tree"&lt;br/&gt;<br/>
+输出: "eert"&lt;br/&gt;<br/>
+解释: 'e'出现两次，'r'和't'都只出现一次。<br/>
+因此'e'必须出现在'r'和't'之前。此外，"eetr"也是一个有效的答案&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子2&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: "cccaaa"&lt;br/&gt;<br/>
+输出: "cccaaa"&lt;br/&gt;<br/>
+解释: 'c'和'a'都出现三次。此外，"aaaccc"也是有效的答案。注意"cacaca"是不正确的，因为相同的字母必须放在一起。<br/>
+&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子3&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: "Aabb"&lt;br/&gt;<br/>
+输出: "bbAa"&lt;br/&gt;<br/>
+解释: 此外，"bbaA"也是一个有效的答案，但"Aabb"是不正确的。<br/>
+注意'A'和'a'被认为是两种不同的字符。<br/>
+&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">思考 1</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">题目也比较简单，只要思想类似于桶排序，我们先用一个hashMap存储每个字符出现的次数，然后对hashMap进行排序，最后再取出来就可以了。&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现1</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;"><span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">/**
+ * @param {string} s
+ * @return {string}
+ */</span>
+
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">export</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">default</span> (s) =&gt; {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> map = <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">new</span> <span style="color: #4ec9b0; line-height: 160%; box-sizing: content-box;">Map</span>();
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> i = <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>; i &lt; s.length; i++) {
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (!map.has(s[i])) {
+      map.set(s[i], <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>);
+    } <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">else</span> {
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> count = map.get(s[i]) + <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>;
+      map.set(s[i], count);
+    }
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> res = [];
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> [key, value] <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">of</span> map) {
+    res.push({
+      key,
+      value,
+    });
+  }
+  res.sort(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">a, b</span>) =&gt;</span> b.value - a.value);
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> res1 = <span style="color: #d69d85; line-height: 160%; box-sizing: content-box;">""</span>;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> i = <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>; i &lt; res.length; i++) {
+    res1 += res[i].key.repeat(res[i].value);
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> res1;
+};
+
+</code></pre>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">实现1的算法时间复杂度 O(nlgn), 空间复杂度 O(1)<br/>
+这里空间复杂度是O（1）的原因是最多只有26个字母，所以不会一直扩张</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">347. 前 K 个高频元素</h2>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">题目描述</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">给定一个非空的整数数组，返回其中出现频率前 k 高的元素。&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子1&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [1,1,1,2,2,3], k = 2&lt;br/&gt;<br/>
+输出: [1,2]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子2&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [1], k = 1&lt;br/&gt;<br/>
+输出: [1]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">提示：&lt;br/&gt;<br/>
+1 你可以假设给定的 k 总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。&lt;br/&gt;<br/>
+2 你的算法的时间复杂度必须优于 O(n log n) , n 是数组的大小。&lt;br/&gt;<br/>
+3 题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的。&lt;br/&gt;<br/>
+4 你可以按任意顺序返回答案。&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">思考 1</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">桶排序顾名思义就是我们事先放几个桶，这几个桶是排好序的，然后我们可以把符合每个桶的元素放到每个桶里边，这样就天然变成有序的了&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">这里我们可以根据数组中每个不同的数字分别设置一个桶，每个桶里放入数字出现的次序，最后返回钱k个高频元素就可以了&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现1</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;"><span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */</span>
+
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">export</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">default</span> (nums, k) =&gt; {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> map = <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">new</span> <span style="color: #4ec9b0; line-height: 160%; box-sizing: content-box;">Map</span>();
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> i = <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>; i &lt; nums.length; i++) {
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (!map.has(nums[i])) {
+      map.set(nums[i], <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>);
+    } <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">else</span> {
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> count = +map.get(nums[i]) + <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>;
+      map.set(nums[i], count);
+    }
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> res = [];
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> [key, value] <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">of</span> map) {
+    res.push({
+      key,
+      value,
+    });
+  }
+  res.sort(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">a, b</span>) =&gt;</span> b.value - a.value);
+  res = res.slice(<span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>, k);
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> res.map(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">item</span>) =&gt;</span> +item.key);
+};
+
+</code></pre>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">实现1的算法时间复杂度 O(nlgn), 空间复杂度 O(1)</p>
+<h2 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 34px; border-bottom: 1px solid #dbdbdb; color: #333;">75. 颜色分类</h2>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">题目描述</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。<br/>
+&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">进阶:&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">1 你可以不使用代码库中的排序函数来解决这道题吗？&lt;br/&gt;<br/>
+2 你能想出一个仅使用常数空间的一趟扫描算法吗？&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子1&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [2,0,2,1,1,0]&lt;br/&gt;<br/>
+输出: [0,0,1,1,2,2]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子2&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [2,0,1]&lt;br/&gt;<br/>
+输出: [0,1,2]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子3&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [0]&lt;br/&gt;<br/>
+输出: [0]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">例子4&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">输入: nums = [1]&lt;br/&gt;<br/>
+输出: [1]&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">提示：&lt;br/&gt;<br/>
+1 n == nums.length&lt;br/&gt;<br/>
+2 1 &lt;= n &lt;= 300&lt;br/&gt;<br/>
+3 nums[i] 为 0、1 或 2&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">思考 1</h3>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">这里使用桶排序，直接统计0，1，2出现的次数，直接修改原数组就可以了&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">当然这里还有其它方法，比如使用双指针，因为前面使用过双指针，我们可以实现下&lt;br/&gt;</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">双指针也很简单，一个low指向数组的开始，一个high指向数组的末尾，使用i进行遍历数组，如果发现nums[i]等于0，则和low交换，并且low++，当发现等于2，则和high交换并且high--&lt;br/&gt;</p>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现1</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+// [2, 0, 2, 1, 1, 0][(2, 0, 2, 1, 1, 0)];
+export default (nums) =&gt; {
+  const res = new Array(3).fill(0);
+  for (let i = 0; i &lt; nums.length; i++) {
+    if (nums[i] === 0) {
+      res[0]++;
+    } else if (nums[i] === 1) {
+      res[1]++;
+    } else {
+      res[2]++;
+    }
+  }
+  // console.log(res);
+  for (let i = 0; i &lt; res[0]; i++) {
+    nums[i] = 0;
+  }
+  for (let i = 0; i &lt; res[1]; i++) {
+    nums[res[0] + i] = 1;
+  }
+  for (let i = 0; i &lt; res[2]; i++) {
+    nums[res[0] + i + res[1]] = 2;
+  }
+};
+
+
+</code></pre>
+<h3 style="line-height: 160%; box-sizing: content-box; font-weight: 700; font-size: 27px; color: #333;">实现2</h3>
+<pre style="line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; margin: 2px 0 8px; background-color: #f5f7f8;"><code style="display: block; overflow-x: auto; background: #1e1e1e; line-height: 160%; box-sizing: content-box; border: 0; border-radius: 0; letter-spacing: -.3px; padding: 18px; color: #f4f4f4; white-space: pre-wrap;">
+<span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */</span>
+<span style="color: #57a64a; font-style: italic; line-height: 160%; box-sizing: content-box;">// [2, 0, 2, 1, 1, 0][(2, 0, 2, 1, 1, 0)];</span>
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> swap = <span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">(<span style="color: #dcdcdc; line-height: 160%; box-sizing: content-box;">nums, i, j</span>) =&gt;</span> {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">const</span> temp = nums[i];
+  nums[i] = nums[j];
+  nums[j] = temp;
+};
+
+<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">export</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">default</span> (nums) =&gt; {
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> low = <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">while</span> (nums[low] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>) {
+    low++;
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> high = nums.length - <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">1</span>;
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">while</span> (nums[high] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">2</span>) {
+    high--;
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">for</span> (<span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">let</span> i = low; i &lt;= high; ) {
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (low &gt; high) {
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">break</span>;
+    }
+    <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (nums[i] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span> || nums[i] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">2</span>) {
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (nums[i] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">0</span>) {
+        <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (low !== i) {
+          swap(nums, low, i);
+        }
+        low++;
+        i = low;
+      } <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">else</span> <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (nums[i] === <span style="color: #b8d7a3; line-height: 160%; box-sizing: content-box;">2</span>) {
+        <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">if</span> (i !== high) {
+          swap(nums, i, high);
+        }
+        high--;
+      }
+      <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">continue</span>;
+    } <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">else</span> {
+      i++;
+    }
+  }
+  <span style="color: #569cd6; line-height: 160%; box-sizing: content-box;">return</span> nums;
+};
+
+</code></pre>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">实现1的算法时间复杂度 O(n), 空间复杂度 O(1)</p>
+<p style="line-height: 160%; box-sizing: content-box; margin: 10px 0; color: #333;">实现2的算法时间复杂度 O(n), 空间复杂度 O(1)</p>
+</div><center style="display:none !important;visibility:collapse !important;height:0 !important;white-space:nowrap;width:100%;overflow:hidden">%5BTOC%5D%0A%0A%23%20%E7%AE%80%E5%8D%95%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%0A%0A1%20%E6%8E%92%E5%BA%8F%E6%98%AF%E6%9C%80%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%EF%BC%8C%E5%9F%BA%E6%9C%AC%E4%B8%8A%E6%AF%8F%E6%9C%AC%E4%B9%A6%E5%BC%80%E5%A4%B4%E9%83%BD%E6%98%AF%E5%85%88%E4%BB%8B%E7%BB%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E3%80%82%0A%0A%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E4%BD%93%E6%9D%A5%E8%AF%B4%EF%BC%8C%E5%8F%AA%E6%98%AF%E7%A7%8D%E7%B1%BB%E7%B9%81%E5%A4%9A%EF%BC%8C%E4%BD%86%E6%98%AF%E5%9F%BA%E6%9C%AC%E4%B8%8A%E9%83%BD%E4%B8%8D%E6%98%AF%E5%BE%88%E9%9A%BE%EF%BC%8C%E9%83%BD%E6%98%AF%E4%BA%9B%E5%9F%BA%E7%A1%80%EF%BC%8C%E8%BF%99%E4%BA%9B%E5%A4%9A%E5%86%99%EF%BC%8C%E6%89%93%E5%A5%BD%E5%9F%BA%E7%A1%80%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E3%80%82%0A%0A%23%23%20215%20%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9%0A%0A%23%23%23%20%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%0A%0A%E5%9C%A8%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%8E%92%E5%BA%8F%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%AD%EF%BC%8C%E6%89%BE%E5%88%B0%E7%AC%AC%20k%20%E5%A4%A7%E7%9A%84%E6%95%B0%E5%AD%97%E3%80%82%3Cbr%2F%3E%0A%0A%E6%B3%A8%E6%84%8F%EF%BC%8C%E8%BF%99%E9%87%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E9%BB%98%E8%AE%A4%E8%82%AF%E5%AE%9A%E6%9C%89%E8%A7%A3%3Cbr%2F%3E%0A%0A%0A%0A%E4%BE%8B%E5%AD%901%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20%5B3%2C2%2C1%2C5%2C6%2C4%5D%20and%20k%20%3D%202%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%205%3Cbr%2F%3E%0A%0A%0A%E4%BE%8B%E5%AD%902%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20%5B3%2C2%2C3%2C1%2C2%2C4%2C5%2C5%2C6%5D%20and%20k%20%3D%204%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%204%3Cbr%2F%3E%0A%0A%23%23%23%20%E6%80%9D%E8%80%83%201%0A%0A%E5%9F%BA%E6%9C%AC%E4%B8%8A%E5%85%88%E6%8E%92%E5%BA%8F%EF%BC%8C%E7%84%B6%E5%90%8E%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BA%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%20%3Cbr%2F%3E%0A%0A%E8%BF%99%E9%87%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%AF%94%E5%A6%82%E4%BD%BF%E7%94%A8%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%8C%E4%B8%80%E8%88%AC%E5%BF%AB%E6%8E%92%E6%98%AF%E6%9F%A5%E6%89%BE%E7%AC%ACk%E5%A4%A7%E6%95%B0%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%3Cbr%2F%3E%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B01%0A%0A%60%60%60js%0A%2F**%0A%20*%20%40param%20%7Bnumber%5B%5D%7D%20nums%0A%20*%20%40param%20%7Bnumber%7D%20k%0A%20*%20%40return%20%7Bnumber%7D%0A%20*%2F%0A%0Aexport%20default%20(nums%2C%20k)%20%3D%3E%20%7B%0A%20%20nums.sort((a%2C%20b)%20%3D%3E%20b%20-%20a)%3B%0A%20%20return%20nums%5Bk%20-%201%5D%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B02%0A%0A%60%60%60js%0A%2F**%0A%20*%20%40param%20%7Bnumber%5B%5D%7D%20nums%0A%20*%20%40param%20%7Bnumber%7D%20k%0A%20*%20%40return%20%7Bnumber%7D%0A%20*%2F%0A%0Aconst%20getPosition%20%3D%20(nums%2C%20p%2C%20r)%20%3D%3E%20%7B%0A%20%20const%20mid%20%3D%20Math.floor(p%20%2B%20(r%20-%20p)%20%2F%202)%3B%0A%20%20let%20temp%3B%0A%20%20let%20pos%3B%0A%20%20let%20tempArr%20%3D%20%5Bnums%5Bp%5D%2C%20nums%5Br%5D%2C%20nums%5Bmid%5D%5D.sort((a%2C%20b)%20%3D%3E%20a%20-%20b)%3B%0A%20%20temp%20%3D%20tempArr%5B1%5D%3B%0A%20%20pos%20%3D%20temp%20%3D%3D%3D%20nums%5Bp%5D%20%3F%20p%20%3A%20temp%20%3D%3D%3D%20nums%5Br%5D%20%3F%20r%20%3A%20mid%3B%0A%20%20for%20(let%20i%20%3D%20p%3B%20i%20%3C%3D%20r%3B%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(nums%5Bi%5D%20%3C%20temp%20%26%26%20i%20%3E%20pos)%20%7B%0A%20%20%20%20%20%20const%20_temp%20%3D%20nums%5Bi%5D%3B%0A%20%20%20%20%20%20if%20(i%20%3E%20pos)%20%7B%0A%20%20%20%20%20%20%20%20for%20(let%20j%20%3D%20i%3B%20j%20%3E%20pos%3B%20j--)%20%7B%0A%20%20%20%20%20%20%20%20%20%20nums%5Bj%5D%20%3D%20nums%5Bj%20-%201%5D%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20nums%5Bpos%5D%20%3D%20_temp%3B%0A%20%20%20%20%20%20pos%2B%2B%3B%0A%20%20%20%20%7D%20else%20if%20(nums%5Bi%5D%20%3E%20temp%20%26%26%20i%20%3C%20pos)%20%7B%0A%20%20%20%20%20%20nums%5Bpos%5D%20%3D%20nums%5Bi%5D%3B%0A%20%20%20%20%20%20nums%5Bi%5D%20%3D%20temp%3B%0A%20%20%20%20%20%20pos%20%3D%20i%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20nums%5Bpos%5D%20%3D%20temp%3B%0A%0A%20%20return%20pos%3B%0A%7D%3B%0A%2F%2F%20p%20%E8%B5%B7%E5%A7%8B%E4%BD%8D%E7%BD%AE%EF%BC%8C%20r%20%E7%BB%93%E6%9D%9F%E4%BD%8D%E7%BD%AE%0A%2F%2F%203%2C%202%2C%203%2C%201%2C%202%2C%204%2C%205%2C%205%2C%206%0Aconst%20quickSort%20%3D%20(nums%2C%20p%2C%20r)%20%3D%3E%20%7B%0A%20%20if%20(p%20%3C%20r)%20%7B%0A%20%20%20%20const%20q%20%3D%20getPosition(nums%2C%20p%2C%20r)%3B%0A%20%20%20%20quickSort(nums%2C%20p%2C%20q%20-%201)%3B%0A%20%20%20%20quickSort(nums%2C%20q%20%2B%201%2C%20r)%3B%0A%20%20%7D%0A%7D%3B%0Aexport%20default%20(nums%2C%20k)%20%3D%3E%20%7B%0A%20%20%2F%2F%20nums.sort((a%2C%20b)%20%3D%3E%20a%20-%20b)%3B%0A%20%20quickSort(nums%2C%200%2C%20nums.length%20-%201)%3B%0A%20%20return%20nums%5Bnums.length%20-%20k%5D%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%0A%E5%AE%9E%E7%8E%B01%E7%9A%84%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(nlgn)%2C%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(1)%0A%0A%0A%23%23%20451.%20%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F%0A%0A%23%23%23%20%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%0A%0A%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E8%AF%B7%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%AD%97%E7%AC%A6%E6%8C%89%E7%85%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E9%A2%91%E7%8E%87%E9%99%8D%E5%BA%8F%E6%8E%92%E5%88%97%E3%80%82%3Cbr%2F%3E%0A%0A%0A%0A%E4%BE%8B%E5%AD%901%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20%22tree%22%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%22eert%22%3Cbr%2F%3E%0A%E8%A7%A3%E9%87%8A%3A%20'e'%E5%87%BA%E7%8E%B0%E4%B8%A4%E6%AC%A1%EF%BC%8C'r'%E5%92%8C't'%E9%83%BD%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E3%80%82%0A%E5%9B%A0%E6%AD%A4'e'%E5%BF%85%E9%A1%BB%E5%87%BA%E7%8E%B0%E5%9C%A8'r'%E5%92%8C't'%E4%B9%8B%E5%89%8D%E3%80%82%E6%AD%A4%E5%A4%96%EF%BC%8C%22eetr%22%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9C%89%E6%95%88%E7%9A%84%E7%AD%94%E6%A1%88%3Cbr%2F%3E%0A%0A%0A%E4%BE%8B%E5%AD%902%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20%22cccaaa%22%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%22cccaaa%22%3Cbr%2F%3E%0A%E8%A7%A3%E9%87%8A%3A%20'c'%E5%92%8C'a'%E9%83%BD%E5%87%BA%E7%8E%B0%E4%B8%89%E6%AC%A1%E3%80%82%E6%AD%A4%E5%A4%96%EF%BC%8C%22aaaccc%22%E4%B9%9F%E6%98%AF%E6%9C%89%E6%95%88%E7%9A%84%E7%AD%94%E6%A1%88%E3%80%82%E6%B3%A8%E6%84%8F%22cacaca%22%E6%98%AF%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%EF%BC%8C%E5%9B%A0%E4%B8%BA%E7%9B%B8%E5%90%8C%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BF%85%E9%A1%BB%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E3%80%82%0A%3Cbr%2F%3E%0A%0A%E4%BE%8B%E5%AD%903%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20%22Aabb%22%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%22bbAa%22%3Cbr%2F%3E%0A%E8%A7%A3%E9%87%8A%3A%20%E6%AD%A4%E5%A4%96%EF%BC%8C%22bbaA%22%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9C%89%E6%95%88%E7%9A%84%E7%AD%94%E6%A1%88%EF%BC%8C%E4%BD%86%22Aabb%22%E6%98%AF%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E3%80%82%0A%E6%B3%A8%E6%84%8F'A'%E5%92%8C'a'%E8%A2%AB%E8%AE%A4%E4%B8%BA%E6%98%AF%E4%B8%A4%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%97%E7%AC%A6%E3%80%82%0A%3Cbr%2F%3E%0A%0A%0A%23%23%23%20%E6%80%9D%E8%80%83%201%0A%0A%E9%A2%98%E7%9B%AE%E4%B9%9F%E6%AF%94%E8%BE%83%E7%AE%80%E5%8D%95%EF%BC%8C%E5%8F%AA%E8%A6%81%E6%80%9D%E6%83%B3%E7%B1%BB%E4%BC%BC%E4%BA%8E%E6%A1%B6%E6%8E%92%E5%BA%8F%EF%BC%8C%E6%88%91%E4%BB%AC%E5%85%88%E7%94%A8%E4%B8%80%E4%B8%AAhashMap%E5%AD%98%E5%82%A8%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%8C%E7%84%B6%E5%90%8E%E5%AF%B9hashMap%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%8C%E6%9C%80%E5%90%8E%E5%86%8D%E5%8F%96%E5%87%BA%E6%9D%A5%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%E3%80%82%3Cbr%2F%3E%0A%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B01%0A%0A%60%60%60js%0A%2F**%0A%20*%20%40param%20%7Bstring%7D%20s%0A%20*%20%40return%20%7Bstring%7D%0A%20*%2F%0A%0Aexport%20default%20(s)%20%3D%3E%20%7B%0A%20%20const%20map%20%3D%20new%20Map()%3B%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20s.length%3B%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(!map.has(s%5Bi%5D))%20%7B%0A%20%20%20%20%20%20map.set(s%5Bi%5D%2C%201)%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20const%20count%20%3D%20map.get(s%5Bi%5D)%20%2B%201%3B%0A%20%20%20%20%20%20map.set(s%5Bi%5D%2C%20count)%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20let%20res%20%3D%20%5B%5D%3B%0A%20%20for%20(let%20%5Bkey%2C%20value%5D%20of%20map)%20%7B%0A%20%20%20%20res.push(%7B%0A%20%20%20%20%20%20key%2C%0A%20%20%20%20%20%20value%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D%0A%20%20res.sort((a%2C%20b)%20%3D%3E%20b.value%20-%20a.value)%3B%0A%20%20let%20res1%20%3D%20%22%22%3B%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20res.length%3B%20i%2B%2B)%20%7B%0A%20%20%20%20res1%20%2B%3D%20res%5Bi%5D.key.repeat(res%5Bi%5D.value)%3B%0A%20%20%7D%0A%20%20return%20res1%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%E5%AE%9E%E7%8E%B01%E7%9A%84%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(nlgn)%2C%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(1)%0A%E8%BF%99%E9%87%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%98%AFO%EF%BC%881%EF%BC%89%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AF%E6%9C%80%E5%A4%9A%E5%8F%AA%E6%9C%8926%E4%B8%AA%E5%AD%97%E6%AF%8D%EF%BC%8C%E6%89%80%E4%BB%A5%E4%B8%8D%E4%BC%9A%E4%B8%80%E7%9B%B4%E6%89%A9%E5%BC%A0%0A%0A%0A%23%23%20347.%20%E5%89%8D%20K%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%0A%0A%23%23%23%20%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%0A%0A%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E9%9D%9E%E7%A9%BA%E7%9A%84%E6%95%B4%E6%95%B0%E6%95%B0%E7%BB%84%EF%BC%8C%E8%BF%94%E5%9B%9E%E5%85%B6%E4%B8%AD%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E5%89%8D%20k%20%E9%AB%98%E7%9A%84%E5%85%83%E7%B4%A0%E3%80%82%3Cbr%2F%3E%0A%0A%0A%0A%E4%BE%8B%E5%AD%901%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B1%2C1%2C1%2C2%2C2%2C3%5D%2C%20k%20%3D%202%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B1%2C2%5D%3Cbr%2F%3E%0A%0A%0A%0A%E4%BE%8B%E5%AD%902%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B1%5D%2C%20k%20%3D%201%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B1%5D%3Cbr%2F%3E%0A%0A%E6%8F%90%E7%A4%BA%EF%BC%9A%3Cbr%2F%3E%0A1%20%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%81%87%E8%AE%BE%E7%BB%99%E5%AE%9A%E7%9A%84%20k%20%E6%80%BB%E6%98%AF%E5%90%88%E7%90%86%E7%9A%84%EF%BC%8C%E4%B8%94%201%20%E2%89%A4%20k%20%E2%89%A4%20%E6%95%B0%E7%BB%84%E4%B8%AD%E4%B8%8D%E7%9B%B8%E5%90%8C%E7%9A%84%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0%E3%80%82%3Cbr%2F%3E%0A2%20%E4%BD%A0%E7%9A%84%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%BF%85%E9%A1%BB%E4%BC%98%E4%BA%8E%20O(n%20log%20n)%20%2C%20n%20%E6%98%AF%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%A7%E5%B0%8F%E3%80%82%3Cbr%2F%3E%0A3%20%E9%A2%98%E7%9B%AE%E6%95%B0%E6%8D%AE%E4%BF%9D%E8%AF%81%E7%AD%94%E6%A1%88%E5%94%AF%E4%B8%80%EF%BC%8C%E6%8D%A2%E5%8F%A5%E8%AF%9D%E8%AF%B4%EF%BC%8C%E6%95%B0%E7%BB%84%E4%B8%AD%E5%89%8D%20k%20%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E7%9A%84%E9%9B%86%E5%90%88%E6%98%AF%E5%94%AF%E4%B8%80%E7%9A%84%E3%80%82%3Cbr%2F%3E%0A4%20%E4%BD%A0%E5%8F%AF%E4%BB%A5%E6%8C%89%E4%BB%BB%E6%84%8F%E9%A1%BA%E5%BA%8F%E8%BF%94%E5%9B%9E%E7%AD%94%E6%A1%88%E3%80%82%3Cbr%2F%3E%0A%0A%0A%23%23%23%20%E6%80%9D%E8%80%83%201%0A%0A%E6%A1%B6%E6%8E%92%E5%BA%8F%E9%A1%BE%E5%90%8D%E6%80%9D%E4%B9%89%E5%B0%B1%E6%98%AF%E6%88%91%E4%BB%AC%E4%BA%8B%E5%85%88%E6%94%BE%E5%87%A0%E4%B8%AA%E6%A1%B6%EF%BC%8C%E8%BF%99%E5%87%A0%E4%B8%AA%E6%A1%B6%E6%98%AF%E6%8E%92%E5%A5%BD%E5%BA%8F%E7%9A%84%EF%BC%8C%E7%84%B6%E5%90%8E%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%8A%8A%E7%AC%A6%E5%90%88%E6%AF%8F%E4%B8%AA%E6%A1%B6%E7%9A%84%E5%85%83%E7%B4%A0%E6%94%BE%E5%88%B0%E6%AF%8F%E4%B8%AA%E6%A1%B6%E9%87%8C%E8%BE%B9%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%B0%B1%E5%A4%A9%E7%84%B6%E5%8F%98%E6%88%90%E6%9C%89%E5%BA%8F%E7%9A%84%E4%BA%86%3Cbr%2F%3E%0A%0A%E8%BF%99%E9%87%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%AF%8F%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E6%A1%B6%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%A1%B6%E9%87%8C%E6%94%BE%E5%85%A5%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E5%BA%8F%EF%BC%8C%E6%9C%80%E5%90%8E%E8%BF%94%E5%9B%9E%E9%92%B1k%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%3Cbr%2F%3E%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B01%0A%0A%60%60%60js%0A%2F**%0A%20*%20%40param%20%7Bnumber%5B%5D%7D%20nums%0A%20*%20%40param%20%7Bnumber%7D%20k%0A%20*%20%40return%20%7Bnumber%5B%5D%7D%0A%20*%2F%0A%0Aexport%20default%20(nums%2C%20k)%20%3D%3E%20%7B%0A%20%20const%20map%20%3D%20new%20Map()%3B%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20nums.length%3B%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(!map.has(nums%5Bi%5D))%20%7B%0A%20%20%20%20%20%20map.set(nums%5Bi%5D%2C%201)%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20const%20count%20%3D%20%2Bmap.get(nums%5Bi%5D)%20%2B%201%3B%0A%20%20%20%20%20%20map.set(nums%5Bi%5D%2C%20count)%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20let%20res%20%3D%20%5B%5D%3B%0A%20%20for%20(let%20%5Bkey%2C%20value%5D%20of%20map)%20%7B%0A%20%20%20%20res.push(%7B%0A%20%20%20%20%20%20key%2C%0A%20%20%20%20%20%20value%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D%0A%20%20res.sort((a%2C%20b)%20%3D%3E%20b.value%20-%20a.value)%3B%0A%20%20res%20%3D%20res.slice(0%2C%20k)%3B%0A%20%20return%20res.map((item)%20%3D%3E%20%2Bitem.key)%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%E5%AE%9E%E7%8E%B01%E7%9A%84%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(nlgn)%2C%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(1)%0A%0A%0A%23%23%2075.%20%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB%0A%0A%23%23%23%20%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0%0A%0A%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%8C%85%E5%90%AB%E7%BA%A2%E8%89%B2%E3%80%81%E7%99%BD%E8%89%B2%E5%92%8C%E8%93%9D%E8%89%B2%EF%BC%8C%E4%B8%80%E5%85%B1%20n%20%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%95%B0%E7%BB%84%EF%BC%8C%E5%8E%9F%E5%9C%B0%E5%AF%B9%E5%AE%83%E4%BB%AC%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F%EF%BC%8C%E4%BD%BF%E5%BE%97%E7%9B%B8%E5%90%8C%E9%A2%9C%E8%89%B2%E7%9A%84%E5%85%83%E7%B4%A0%E7%9B%B8%E9%82%BB%EF%BC%8C%E5%B9%B6%E6%8C%89%E7%85%A7%E7%BA%A2%E8%89%B2%E3%80%81%E7%99%BD%E8%89%B2%E3%80%81%E8%93%9D%E8%89%B2%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E3%80%82%0A%0A%E6%AD%A4%E9%A2%98%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BD%BF%E7%94%A8%E6%95%B4%E6%95%B0%200%E3%80%81%201%20%E5%92%8C%202%20%E5%88%86%E5%88%AB%E8%A1%A8%E7%A4%BA%E7%BA%A2%E8%89%B2%E3%80%81%E7%99%BD%E8%89%B2%E5%92%8C%E8%93%9D%E8%89%B2%E3%80%82%0A%3Cbr%2F%3E%0A%0A%E8%BF%9B%E9%98%B6%3A%3Cbr%2F%3E%0A%0A1%20%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%B8%8D%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E5%BA%93%E4%B8%AD%E7%9A%84%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0%E6%9D%A5%E8%A7%A3%E5%86%B3%E8%BF%99%E9%81%93%E9%A2%98%E5%90%97%EF%BC%9F%3Cbr%2F%3E%0A2%20%E4%BD%A0%E8%83%BD%E6%83%B3%E5%87%BA%E4%B8%80%E4%B8%AA%E4%BB%85%E4%BD%BF%E7%94%A8%E5%B8%B8%E6%95%B0%E7%A9%BA%E9%97%B4%E7%9A%84%E4%B8%80%E8%B6%9F%E6%89%AB%E6%8F%8F%E7%AE%97%E6%B3%95%E5%90%97%EF%BC%9F%3Cbr%2F%3E%0A%0A%0A%E4%BE%8B%E5%AD%901%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B2%2C0%2C2%2C1%2C1%2C0%5D%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B0%2C0%2C1%2C1%2C2%2C2%5D%3Cbr%2F%3E%0A%0A%0A%0A%E4%BE%8B%E5%AD%902%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B2%2C0%2C1%5D%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B0%2C1%2C2%5D%3Cbr%2F%3E%0A%0A%E4%BE%8B%E5%AD%903%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B0%5D%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B0%5D%3Cbr%2F%3E%0A%0A%E4%BE%8B%E5%AD%904%3Cbr%2F%3E%0A%0A%E8%BE%93%E5%85%A5%3A%20nums%20%3D%20%5B1%5D%3Cbr%2F%3E%0A%E8%BE%93%E5%87%BA%3A%20%5B1%5D%3Cbr%2F%3E%0A%0A%E6%8F%90%E7%A4%BA%EF%BC%9A%3Cbr%2F%3E%0A1%20n%20%3D%3D%20nums.length%3Cbr%2F%3E%0A2%201%20%3C%3D%20n%20%3C%3D%20300%3Cbr%2F%3E%0A3%20nums%5Bi%5D%20%E4%B8%BA%200%E3%80%811%20%E6%88%96%202%3Cbr%2F%3E%0A%0A%0A%23%23%23%20%E6%80%9D%E8%80%83%201%0A%E8%BF%99%E9%87%8C%E4%BD%BF%E7%94%A8%E6%A1%B6%E6%8E%92%E5%BA%8F%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%BB%9F%E8%AE%A10%EF%BC%8C1%EF%BC%8C2%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%EF%BC%8C%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9%E5%8E%9F%E6%95%B0%E7%BB%84%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86%3Cbr%2F%3E%0A%0A%E5%BD%93%E7%84%B6%E8%BF%99%E9%87%8C%E8%BF%98%E6%9C%89%E5%85%B6%E5%AE%83%E6%96%B9%E6%B3%95%EF%BC%8C%E6%AF%94%E5%A6%82%E4%BD%BF%E7%94%A8%E5%8F%8C%E6%8C%87%E9%92%88%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%89%8D%E9%9D%A2%E4%BD%BF%E7%94%A8%E8%BF%87%E5%8F%8C%E6%8C%87%E9%92%88%EF%BC%8C%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E4%B8%8B%3Cbr%2F%3E%0A%0A%E5%8F%8C%E6%8C%87%E9%92%88%E4%B9%9F%E5%BE%88%E7%AE%80%E5%8D%95%EF%BC%8C%E4%B8%80%E4%B8%AAlow%E6%8C%87%E5%90%91%E6%95%B0%E7%BB%84%E7%9A%84%E5%BC%80%E5%A7%8B%EF%BC%8C%E4%B8%80%E4%B8%AAhigh%E6%8C%87%E5%90%91%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%AB%E5%B0%BE%EF%BC%8C%E4%BD%BF%E7%94%A8i%E8%BF%9B%E8%A1%8C%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%8F%91%E7%8E%B0nums%5Bi%5D%E7%AD%89%E4%BA%8E0%EF%BC%8C%E5%88%99%E5%92%8Clow%E4%BA%A4%E6%8D%A2%EF%BC%8C%E5%B9%B6%E4%B8%94low%2B%2B%EF%BC%8C%E5%BD%93%E5%8F%91%E7%8E%B0%E7%AD%89%E4%BA%8E2%EF%BC%8C%E5%88%99%E5%92%8Chigh%E4%BA%A4%E6%8D%A2%E5%B9%B6%E4%B8%94high--%3Cbr%2F%3E%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B01%0A%0A%60%60%60ji%0A%2F**%0A%20*%20%40param%20%7Bnumber%5B%5D%7D%20nums%0A%20*%20%40return%20%7Bvoid%7D%20Do%20not%20return%20anything%2C%20modify%20nums%20in-place%20instead.%0A%20*%2F%0A%2F%2F%20%5B2%2C%200%2C%202%2C%201%2C%201%2C%200%5D%5B(2%2C%200%2C%202%2C%201%2C%201%2C%200)%5D%3B%0Aexport%20default%20(nums)%20%3D%3E%20%7B%0A%20%20const%20res%20%3D%20new%20Array(3).fill(0)%3B%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20nums.length%3B%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(nums%5Bi%5D%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20%20res%5B0%5D%2B%2B%3B%0A%20%20%20%20%7D%20else%20if%20(nums%5Bi%5D%20%3D%3D%3D%201)%20%7B%0A%20%20%20%20%20%20res%5B1%5D%2B%2B%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20res%5B2%5D%2B%2B%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20%2F%2F%20console.log(res)%3B%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20res%5B0%5D%3B%20i%2B%2B)%20%7B%0A%20%20%20%20nums%5Bi%5D%20%3D%200%3B%0A%20%20%7D%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20res%5B1%5D%3B%20i%2B%2B)%20%7B%0A%20%20%20%20nums%5Bres%5B0%5D%20%2B%20i%5D%20%3D%201%3B%0A%20%20%7D%0A%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20res%5B2%5D%3B%20i%2B%2B)%20%7B%0A%20%20%20%20nums%5Bres%5B0%5D%20%2B%20i%20%2B%20res%5B1%5D%5D%20%3D%202%3B%0A%20%20%7D%0A%7D%3B%0A%0A%0A%60%60%60%0A%0A%23%23%23%20%E5%AE%9E%E7%8E%B02%0A%0A%60%60%60js%0A%0A%2F**%0A%20*%20%40param%20%7Bnumber%5B%5D%7D%20nums%0A%20*%20%40return%20%7Bvoid%7D%20Do%20not%20return%20anything%2C%20modify%20nums%20in-place%20instead.%0A%20*%2F%0A%2F%2F%20%5B2%2C%200%2C%202%2C%201%2C%201%2C%200%5D%5B(2%2C%200%2C%202%2C%201%2C%201%2C%200)%5D%3B%0Aconst%20swap%20%3D%20(nums%2C%20i%2C%20j)%20%3D%3E%20%7B%0A%20%20const%20temp%20%3D%20nums%5Bi%5D%3B%0A%20%20nums%5Bi%5D%20%3D%20nums%5Bj%5D%3B%0A%20%20nums%5Bj%5D%20%3D%20temp%3B%0A%7D%3B%0A%0Aexport%20default%20(nums)%20%3D%3E%20%7B%0A%20%20let%20low%20%3D%200%3B%0A%20%20while%20(nums%5Blow%5D%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20low%2B%2B%3B%0A%20%20%7D%0A%20%20let%20high%20%3D%20nums.length%20-%201%3B%0A%20%20while%20(nums%5Bhigh%5D%20%3D%3D%3D%202)%20%7B%0A%20%20%20%20high--%3B%0A%20%20%7D%0A%20%20for%20(let%20i%20%3D%20low%3B%20i%20%3C%3D%20high%3B%20)%20%7B%0A%20%20%20%20if%20(low%20%3E%20high)%20%7B%0A%20%20%20%20%20%20break%3B%0A%20%20%20%20%7D%0A%20%20%20%20if%20(nums%5Bi%5D%20%3D%3D%3D%200%20%7C%7C%20nums%5Bi%5D%20%3D%3D%3D%202)%20%7B%0A%20%20%20%20%20%20if%20(nums%5Bi%5D%20%3D%3D%3D%200)%20%7B%0A%20%20%20%20%20%20%20%20if%20(low%20!%3D%3D%20i)%20%7B%0A%20%20%20%20%20%20%20%20%20%20swap(nums%2C%20low%2C%20i)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20low%2B%2B%3B%0A%20%20%20%20%20%20%20%20i%20%3D%20low%3B%0A%20%20%20%20%20%20%7D%20else%20if%20(nums%5Bi%5D%20%3D%3D%3D%202)%20%7B%0A%20%20%20%20%20%20%20%20if%20(i%20!%3D%3D%20high)%20%7B%0A%20%20%20%20%20%20%20%20%20%20swap(nums%2C%20i%2C%20high)%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20high--%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20continue%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20i%2B%2B%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20return%20nums%3B%0A%7D%3B%0A%0A%60%60%60%0A%0A%E5%AE%9E%E7%8E%B01%E7%9A%84%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(n)%2C%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(1)%0A%0A%0A%E5%AE%9E%E7%8E%B02%E7%9A%84%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(n)%2C%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20O(1)%0A%0A%0A</center></body></html>
