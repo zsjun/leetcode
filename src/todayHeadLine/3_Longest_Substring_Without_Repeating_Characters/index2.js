@@ -16,3 +16,7 @@ export default (s) => {
   }
   return max;
 };
+
+setTimeout(() => {
+  console.log(11)
+}, Infinity);
