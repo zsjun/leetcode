@@ -2,44 +2,30 @@
  * @param {number[]} nums
  * @return {number}
  */
-
-function CeilIndex(int A[], int l, int r, int key)
-{
-    while (r - l > 1) {
-        int m = l + (r - l) / 2;
-        if (A[m] >= key)
-            r = m;
-        else
-            l = m;
-    }
-
-    return r;
-}
 // Runtime: 168 ms, faster than 55.06% of JavaScript online submissions for Longest Increasing Subsequence.
 // Memory Usage: 39.4 MB, less than 66.46% of JavaScript online submissions for Longest Increasing Subsequence.
-export default (nums) => {
-  // Add boundary case, when array size is one
-  const len = nums.length;
-  const tailTable = new Array(len).fill(0);
-  int len; // always points empty slot
-
-  tailTable[0] = [0];
-  len = 1;
-
-  for (int i = 1; i < size; i++) {
-      if (A[i] < tailTable[0])
-          // new smallest value
-          tailTable[0] = A[i];
-
-      else if (A[i] > tailTable[len - 1])
-          // A[i] wants to extend largest subsequence
-          tailTable[len++] = A[i];
-
-      else
-          // A[i] wants to be current end candidate of an existing
-          // subsequence. It will replace ceil value in tailTable
-          tailTable[CeilIndex(tailTable, -1, len - 1, A[i])] = A[i];
+const binarySearchPosition = (dp, target) => {
+  let low = 1;
+  let hi = dp.length - 1;
+  while (low <= hi) {
+    let mid = Math.floor(low + (hi - low) / 2);
+    if (target === dp[mid] || (target < dp[mid] && target > dp[mid - 1])) return mid;
+    else if (target < dp[mid]) hi = mid - 1;
+    else if (target > dp[mid]) low = mid + 1;
   }
-
-  return len;
+  return -1;
+};
+export default (nums) => {
+  if (nums === null || nums.length === 0) return 0;
+  if (nums.length === 1) return 1;
+  const dp = new Array(nums.length + 1).fill(Number.MAX_VALUE);
+  dp[0] = Number.MIN_SAFE_INTEGER;
+  for (let i = 1; i < dp.length; i++) {
+    let pos = binarySearchPosition(dp, nums[i - 1]);
+    dp[pos] = nums[i - 1];
+  }
+  for (let i = dp.length - 1; i >= 1; i--) {
+    if (dp[i] !== Number.MAX_VALUE) return i;
+  }
+  return -1;
 };
