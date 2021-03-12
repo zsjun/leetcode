@@ -2,26 +2,12 @@
  * @param {number} num
  * @return {string}
  */
-const map = {
-  1: "I",
-  4: "IV",
-  5: "V",
-  9: "IX",
-  10: "X",
-  40: "XL",
-  50: "L",
-  90: "XC",
-  100: "C",
-  400: "CD",
-  500: "D",
-  900: "CM",
-  1000: "M",
-};
+// Runtime: 164 ms, faster than 67.32% of JavaScript online submissions for Integer to Roman.
+// Memory Usage: 45.1 MB, less than 76.11% of JavaScript online submissions for Integer to Roman.
 export default (num) => {
-  let res = "";
-  while (num > 0) {
-    const temp = num / 1000;
-    res += map[temp];
-    
-  }
+  const m = ["", "M", "MM", "MMM"];
+  const c = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+  const x = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+  const i = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+  return m[Math.floor(num / 1000)] + c[Math.floor((num % 1000) / 100)] + x[Math.floor((num % 100) / 10)] + i[num % 10];
 };
