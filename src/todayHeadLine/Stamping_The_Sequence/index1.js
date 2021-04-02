@@ -1,59 +1,64 @@
-/**
- * @param {string} stamp
- * @param {string} target
- * @return {number[]}
- */
+// /**
+//  * @param {string} stamp
+//  * @param {string} target
+//  * @return {number[]}
+//  */
+// // Input: (stamp = 'abc'), (target = 'ababc');
+// // Output: [0, 2];
 
-// Input: (stamp = 'abc'), (target = 'ababc');
-// Output: [0, 2];
+// // Input: (stamp = 'abca'), (target = 'aabcaca');
+// // Output: [3, 0, 1];
+// export default (s, t) => {
+//   if (s[0] !== t[0] || s[s.length - 1] !== t[t.length - 1]) {
+//     return [];
+//   }
+//   const sLen = s.length;
+//   const tLen = t.length;
+//   const path = new Array(tLen).fill(-1);
+//   path[0] = 0;
+//   path[tLen - 1] = sLen - 1;
+//   // tIndex target的索引，index是t[tIndex]在stamp中的索引
+//   let low = 1;
+//   let high = tLen - 2;
+//   while (low <= high) {
+//     if (s[path[low - 1] + 1] === t[low]) {
+//       path[low] = path[low - 1] + 1;
+//       ++low;
+//     } else if (s[path[high + 1] - 1] === t[high]) {
+//       path[high] = path[high + 1] - 1;
+//       --high;
+//     } else {
+//       if (t[low] === s[0]) {
+//         path[low] = 0;
+//         ++low;
+//       } else if (t[high] === s[sLen - 1]) {
+//         path[high] = 0;
+//         --high;
+//       } else {
+//         return [];
+//       }
+//     }
+//   }
+//   let res = [];
+//   let low1 = 0;
+//   let high1 = path.length - 1;
 
-// Input: (stamp = 'abca'), (target = 'aabcaca');
-// Output: [3, 0, 1];
-export default (s, t) => {
-  if (s[0] !== t[0] || s[s.length - 1] !== t[t.length - 1]) {
-    return [];
-  }
-  const sLen = s.length;
-  const tLen = t.length;
-  const path = new Array(tLen).fill(-1);
-  // const pos = new Map()
-  // for(let i =0;i<s.length;i++) {
+//   while (low1 < high1) {
+//     res.push(low1);
+//     while (path[low1 + 1] > path[low1]) {
+//       ++low1;
+//     }
+//     ++low1;
+//     if (high1 > low1) {
+//       let count = 1;
 
-  // }
-  // pos = collections.defaultdict(set)
-  // for i, c in enumerate(s): pos[c].add(i)
-  path[0] = 0;
-  function dfs(tIndex, index) {
-    // rule1
-    if (tIndex >= tLen) {
-      return;
-    }
-    if (t[tIndex] === s[path[tIndex - 1] + 1]) {
-      path[tIndex] = path[tIndex - 1] + 1;
-    } else if (t[tIndex] === s[0]) {
-      path[tIndex] = 0;
-    } else if (t[tIndex - 1] === s[s.length - 1]) {
-      path[tIndex] = s.indexOf(t[tIndex]);
-    }
-    return dfs(tIndex + 1);
-  }
-
-  // def path2res(path):
-  //     down, up = [], []
-  //     for i in range(len(path)):
-  //         if path[i] == 0:
-  //             up.append(i)
-  //         elif i and path[i] - 1 != path[i - 1]:
-  //             down.append(i - path[i])
-  //     return down[::-1] + up
-
-  dfs(1);
-  for (let i = 0; i < tLen; i++) {
-    if (t[i] === -1) {
-      return [];
-    }
-  }
-  console.log(path);
-  // if not dfs(0, 0): return []
-  // return path2res(path)
-};
+//       while (path[high1 - 1] < path[high1]) {
+//         ++count;
+//         --high1;
+//       }
+//       --high1;
+//       res.push(high1 - sLen - count);
+//     }
+//   }
+//   return res;
+// };
