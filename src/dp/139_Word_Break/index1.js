@@ -11,7 +11,7 @@ const wordBreak = (s, wordDict) => {
   for (let i = 1; i <= s.length; i++) {
     dp[i] = false;
     for (let j = 0; j <= i; j++) {
-      console.log(s.substring(j, i));
+      // console.log(s.substring(j, i));
       if (dp[j] && wordDict.includes(s.substring(j, i))) {
         dp[i] = true;
       }
