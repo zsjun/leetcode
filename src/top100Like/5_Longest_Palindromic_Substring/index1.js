@@ -6,18 +6,6 @@
 // 但是好像可以使用动态规划来解决
 // dp[i] 表示以第i个字符结束的最长回文字符串，那么dp[i+1] 要么是s[i+1]等于s[i+1-dp[i]-1]也就是s[i-dp[i]]
 // 思路有了，我们来写下代码
-const isPalindromic = (s, i, j) => {
-  let res = true;
-  while (i <= j) {
-    if (s.charAt(i) !== s.charAt(j)) {
-      return false;
-    } else {
-      --j;
-      ++i;
-    }
-  }
-  return res;
-};
 export default (s) => {
   // 首先来考虑特殊情况
   if (!s) return "";
