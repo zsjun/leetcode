@@ -1,4 +1,4 @@
-hasFinished problems   total 17
+hasFinished problems   total 20
 139
 1
 2
@@ -18,3 +18,6 @@ hasFinished problems   total 17
 12_Integer_to_Roman
 13_Roman to Integer
 169_Majority Element
+32_Longest_Valid_Parentheses
+98_Validate_Binary_Search_Tree/
+85_Maximal_Rectangle
