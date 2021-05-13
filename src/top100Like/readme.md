@@ -1,4 +1,4 @@
-hasFinished problems   total 20
+hasFinished problems   total 21
 139
 1
 2
@@ -21,3 +21,4 @@ hasFinished problems   total 20
 32_Longest_Valid_Parentheses
 98_Validate_Binary_Search_Tree/
 85_Maximal_Rectangle
+300_Longest_Increasing_Subsequence
