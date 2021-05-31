@@ -1,5 +1,8 @@
-hasFinished problems   total 30
+hasFinished problems   total 32
 
+
+337_House_Robber_III
+22_Generate_Parentheses
 45_Jump_Game_II22322
 55_Jump_Game
 215_Kth_Largest_Element_in_an_Array
