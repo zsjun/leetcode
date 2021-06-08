@@ -1,4 +1,8 @@
-hasFinished problems   total 33
+hasFinished problems   total 35
+
+2021年6月8号
+41_First_Missing_Positive
+287_Find_the_Duplicate_Number
 
 
 114_Flatten_Binary_Tree_to_Linked_List
