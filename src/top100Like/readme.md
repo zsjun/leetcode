@@ -1,8 +1,9 @@
-hasFinished problems   total 35
+hasFinished problems   total 36
 
 2021年6月8号
 41_First_Missing_Positive
 287_Find_the_Duplicate_Number
+295_Find_Median_from_Data_Stream
 
 
 114_Flatten_Binary_Tree_to_Linked_List
