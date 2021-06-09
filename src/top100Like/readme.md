@@ -1,4 +1,9 @@
-hasFinished problems   total 36
+hasFinished problems   total 38
+
+
+2021年6月9日
+448_Find All Numbers Disappeared in an Array
+34_Find_First_and_Last_Position_of_Element_in_Sorted_Array/
 
 2021年6月8号
 41_First_Missing_Positive
