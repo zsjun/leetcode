@@ -46,6 +46,7 @@ const merge = (l1, l2, head) => {
   return last;
 };
 
+//  从底向上拆开然后就合并
 export default (head) => {
   if (!head || !head.next) return head;
   const len = 0;
