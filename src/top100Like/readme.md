@@ -1,4 +1,11 @@
-hasFinished problems   total 46
+hasFinished problems   total 48
+
+
+2021-6-20
+148_Sort_List
+
+2021-6-19
+142_Linked_List_Cycle_II
 
 2021-6-17
 124_Binary_Tree_Maximum_Path_Sum
