@@ -4,6 +4,7 @@
  */
 //  Runtime: 72 ms, faster than 98.78% of JavaScript online submissions for Maximum Product Subarray.
 //  Memory Usage: 40.1 MB, less than 28.85% of JavaScript online submissions for Maximum Product Subarray.
+// 最大的时候，要么是前面最小的乘以本身，要么是前面最大的乘以本身
 export default (nums) => {
   let res = nums[0];
 
