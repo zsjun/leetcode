@@ -1,7 +1,12 @@
-hasFinished problems   total 51
+hasFinished problems   total 52
+
+
+2021-6-23
+155_Min_Stack
 
 2021-6-22
 207_Course_Schedule
+
 2021-6-21
 199_Binary_Tree_Right_Side_View
 
