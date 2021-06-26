@@ -1,6 +1,14 @@
-hasFinished problems   total 52
+hasFinished problems   total 55
 
 
+2021-6-26
+541_Reverse_String_II
+557_Reverse_Words_in_a_String_III
+
+2021-6-25
+344_Reverse_String
+2021-6-24
+58_Length_of_Last_Word
 2021-6-23
 155_Min_Stack
 
