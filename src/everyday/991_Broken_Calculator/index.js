@@ -3,6 +3,7 @@
  * @param {number} target
  * @return {number}
  */
+// test
 export default (startValue, target) => {
   let res = 0;
   while (target > startValue) {
