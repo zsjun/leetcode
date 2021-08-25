@@ -3,6 +3,7 @@
  * @param {number} T
  * @return {number}
  */
+// console.log
 export default (clips, T) => {
   let dp = new Array(T + 1);
   dp.fill(T + 1);
