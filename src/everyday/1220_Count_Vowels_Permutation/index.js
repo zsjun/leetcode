@@ -3,6 +3,8 @@
  * @return {number}
  */
 
+// 当时思考的是也是根据a结尾的数量，但是没有想到可以合并，当时想的是建立一个结尾的数组
+// 要考虑合并的情况
 // Runtime: 114 ms, faster than 56.67% of JavaScript online submissions for Count Vowels Permutation.
 // Memory Usage: 39.1 MB, less than 100.00% of JavaScript online submissions for Count Vowels Permutation.
 export default (n) => {
