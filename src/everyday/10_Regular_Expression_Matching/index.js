@@ -29,7 +29,7 @@ var isMatch = function (s, p) {
       }
       if (p.charAt(j) === "*") {
         // 如果是p.charAt(j-1) 是字符，并且不相等，只能取零个字符
-        if (p.charAt(j - 1) !== s.charAt(i) && p.charAt(j - 1) != ".") {
+        if (p.charAt(j - 1) !== s.charAt(i) && p.charAt(j - 1) !== ".") {
           dp[i + 1][j + 1] = dp[i + 1][j - 1];
         } else {
           // p.charAt(j-1)是字符，并且相等，那此时等于取一个字符也就是dp[i+1][j]
