@@ -26,6 +26,7 @@ const exist1 = (board, x, y, word, i) => {
   board[x][y] = tempVal;
   return exist;
 };
+
 var exist = function (board, word) {
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
