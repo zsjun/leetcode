@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /**
+       * @param {string} s
+       * @return {string[]}
+       */
+      const backTrick = (s, start, tempList, res) => {
+        if (start >= s.length && tempList.length === 4) {
+          res.push([...tempList]);
+          return;
+        }
+        if (start >= s.length && tempList.length !== 4) {
+          return;
+        }
+        if (tempList.length > 4) {
+          return;
+        }
+
+        for (let i = start; i < s.length; i++) {
+          const tempS2 = s.substring(i, i + 3)i
+          if (+tempS2 >= 100 && +tempS2 <= 255) {
+            tempList.push(tempS2);
+            backTrick(s, start + 3, tempList, res);
+            tempList.pop();
+          }
+          const tempS1 = s.substring(i, i + 2);
+          if (+tempS1 >= 10 && +tempS1 <= 99) {
+            tempList.push(tempS1);
+            backTrick(s, start + 2, tempList, res);
+            tempList.pop();
+          }
+          const tempS = s.substring(i, i + 1);
+          if (+tempS > 0) {
+            tempList.push(tempS);
+            backTrick(s, i + 1, tempList, res);
+            tempList.pop();
+          }
+        }
+      };
+      function test(s) {
+        const res = [];
+        backTrick(s, 0, [], res);
+        return res;
+      }
+      test("")
+    </script>
+  </head>
+  <body></body>
+</html>
