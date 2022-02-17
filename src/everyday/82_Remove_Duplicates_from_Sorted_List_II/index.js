@@ -9,6 +9,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+// 当使用东西的时候，一定要注意是否存在
 var deleteDuplicates = function (head) {
   if (!head) return null;
   let newHead = null;
