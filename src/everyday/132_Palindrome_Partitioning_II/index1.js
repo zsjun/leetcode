@@ -26,8 +26,7 @@ var minCut = function (s) {
   for (let j = 3; j <= s.length; j++) {
     for (let i = 1; i <= j; i++) {
       if (ispalind(s, i - 1, j - 1)) {
-        dp[j] = dp[i - 1] + 1;
-        break;
+        dp[j] = Math.min(dp[i - 1] + 1, dp[j]);
       }
     }
   }
