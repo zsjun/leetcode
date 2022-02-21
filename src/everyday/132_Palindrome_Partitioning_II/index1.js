@@ -24,11 +24,14 @@ var minCut = function (s) {
     dp[2] = 1;
   }
   for (let j = 3; j <= s.length; j++) {
+    dp[j] = j - 1;
     for (let i = 1; i <= j; i++) {
       if (ispalind(s, i - 1, j - 1)) {
-        dp[j] = Math.min(dp[i - 1] + 1, dp[j]);
+        const min = i === 1 ? 0 : dp[i - 1] + 1;
+        dp[j] = Math.min(min, dp[j]);
       }
     }
   }
+  console.log(dp);
   return dp[s.length];
 };
